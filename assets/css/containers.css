@@ -1,0 +1,7 @@
+#page {
+	@apply w-full flex flex-col flex-1;
+}
+
+#page-content {
+	@apply w-[1024px] mx-auto border-x border-dashed border-zinc-800 flex-1;
+}
