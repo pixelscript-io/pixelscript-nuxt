@@ -17,16 +17,22 @@
 						</p>
 						<div class="app-list">
 							<div class="app">
-								<div class="app-logo"></div>
-								<p class="app-name">App Name</p>
+								<div class="app-logo">
+									<img src="/img/logo_figma.svg" alt="Figma" />
+								</div>
+								<p class="app-name">Figma</p>
 							</div>
 							<div class="app">
-								<div class="app-logo"></div>
-								<p class="app-name">App Name</p>
+								<div class="app-logo">
+									<img src="/img/logo_zeplin.svg" alt="Zeplin" />
+								</div>
+								<p class="app-name">Zeplin</p>
 							</div>
 							<div class="app">
-								<div class="app-logo"></div>
-								<p class="app-name">App Name</p>
+								<div class="app-logo">
+									<img src="/img/logo_photoshop.svg" alt="Photoshop" />
+								</div>
+								<p class="app-name">Photoshop</p>
 							</div>
 						</div>
 					</div>
@@ -37,16 +43,22 @@
 						</p>
 						<div class="app-list">
 							<div class="app">
-								<div class="app-logo"></div>
-								<p class="app-name">App Name</p>
+								<div class="app-logo">
+									<img src="/img/logo_airtable.svg" alt="Airtable" />
+								</div>
+								<p class="app-name">Airtable</p>
 							</div>
 							<div class="app">
-								<div class="app-logo"></div>
-								<p class="app-name">App Name</p>
+								<div class="app-logo">
+									<img src="/img/logo_miro.svg" alt="Miro" />
+								</div>
+								<p class="app-name">Miro</p>
 							</div>
 							<div class="app">
-								<div class="app-logo"></div>
-								<p class="app-name">App Name</p>
+								<div class="app-logo">
+									<img src="/img/logo_segment.svg" alt="Segment" />
+								</div>
+								<p class="app-name">Segment</p>
 							</div>
 						</div>
 					</div>
@@ -57,16 +69,22 @@
 						</p>
 						<div class="app-list">
 							<div class="app">
-								<div class="app-logo"></div>
-								<p class="app-name">App Name</p>
+								<div class="app-logo">
+									<img src="/img/logo_storybook.svg" alt="Storybook" />
+								</div>
+								<p class="app-name">Storybook</p>
 							</div>
 							<div class="app">
-								<div class="app-logo"></div>
-								<p class="app-name">App Name</p>
+								<div class="app-logo">
+									<img src="/img/logo_vitepress.svg" alt="VitePress" />
+								</div>
+								<p class="app-name">VitePress</p>
 							</div>
 							<div class="app">
-								<div class="app-logo"></div>
-								<p class="app-name">App Name</p>
+								<div class="app-logo">
+									<img src="/img/logo_supernova.svg" alt="Supernova" />
+								</div>
+								<p class="app-name">Supernova</p>
 							</div>
 						</div>
 					</div>
@@ -77,16 +95,22 @@
 						</p>
 						<div class="app-list">
 							<div class="app">
-								<div class="app-logo"></div>
-								<p class="app-name">App Name</p>
+								<div class="app-logo">
+									<img src="/img/logo_vscode.svg" alt="Visual Studio Code" />
+								</div>
+								<p class="app-name">Visual Studio Code</p>
 							</div>
 							<div class="app">
-								<div class="app-logo"></div>
-								<p class="app-name">App Name</p>
+								<div class="app-logo">
+									<img src="/img/logo_vue.svg" alt="Vue" />
+								</div>
+								<p class="app-name">Vue</p>
 							</div>
 							<div class="app">
-								<div class="app-logo"></div>
-								<p class="app-name">App Name</p>
+								<div class="app-logo">
+									<img src="/img/logo_css.svg" alt="CSS" />
+								</div>
+								<p class="app-name">CSS</p>
 							</div>
 						</div>
 					</div>
@@ -118,7 +142,7 @@
 	}
 
 	.app-logo {
-		@apply w-8 h-8 bg-zinc-800 rounded-sm;
+		@apply w-8 h-8 bg-transparent rounded-sm flex items-center justify-center;
 	}
 
 	.app-name {
