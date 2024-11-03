@@ -7,7 +7,8 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   css: [
     '~/assets/css/main.css',
-    '~/assets/css/containers.css'
+    '~/assets/css/containers.css',
+    '~/assets/css/text.css',
   ],
   devtools: {
     enabled: true
@@ -22,6 +23,7 @@ export default defineNuxtConfig({
           colors: {
             'ps-blue': {
               50: '#A6C8FF',
+              100: '#4589FF',
             }
           },
         },

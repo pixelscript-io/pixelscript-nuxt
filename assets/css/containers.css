@@ -3,5 +3,14 @@
 }
 
 #page-content {
-	@apply w-[1024px] mx-auto border-x border-dashed border-zinc-800 flex-1;
+	@apply w-[1024px] mx-auto border-x border-dashed border-zinc-800 flex-1 relative;
+}
+
+#page-content-container {
+	@apply w-[768px] mx-auto my-20;
+}
+
+#subpage-bg {
+	@apply absolute inset-0 h-[440px] [mask-image:linear-gradient(to_bottom,_#ffffffad,_transparent)] pointer-events-none;
+	background-image: url('/img/circuit.svg');
 }

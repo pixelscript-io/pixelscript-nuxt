@@ -5,6 +5,7 @@
 		<div id="content">
 			<slot />
 		</div>
+		<AppTestimonial />
 		<AppFooter />
   </div>
 </template>

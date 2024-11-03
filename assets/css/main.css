@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 
 :root {
+	-webkit-font-smoothing: auto;
+	-moz-osx-font-smoothing: auto;
 	font-family: "Inter", sans-serif;
+}
+
+.page-divider {
+	@apply border-t border-zinc-900 border-dashed my-12;
+}
+
+.page-divider-short {
+	@apply border-t border-ps-blue-100 border-solid my-6 w-12;
 }

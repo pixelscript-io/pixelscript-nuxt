@@ -1,5 +1,5 @@
 <template>
-	<button class="nav-button group" :class="{ active: isActive }">
+	<button class="nav-button group" :class="{ active: isActive, footer: footer }">
 		<span class="group-hover:text-zinc-400">{{ label }}</span>
 		<div class="hotkey" :class="{ activeHotkey: hotkeyPressed }">{{ hotkey }}</div>
 	</button>
@@ -21,6 +21,10 @@
 			type: String,
 			default: '/',
 			required: true
+		},
+		footer: {
+			type: Boolean,
+			default: false
 		}
 	});
 
@@ -62,6 +66,10 @@
 
 	.active:hover span {
 		@apply !text-ps-blue-50;
+	}
+
+	.nav-button.footer {
+		@apply pr-0;
 	}
 
 	.nav-button .hotkey {
