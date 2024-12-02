@@ -7,7 +7,7 @@
 }
 
 #page-content-container {
-	@apply w-[768px] mx-auto my-20;
+	@apply w-[768px] mx-auto my-20 relative;
 }
 
 #subpage-bg {
