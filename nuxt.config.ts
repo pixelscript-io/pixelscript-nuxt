@@ -13,9 +13,16 @@ export default defineNuxtConfig({
   devtools: {
     enabled: true
   },
-  modules: [
-    '@nuxtjs/tailwindcss'
-  ],
+  modules: ['@nuxtjs/tailwindcss', 'nuxt-mail'],
+  mail: {
+    message: {
+      to: 'joe@pixelscript.io',
+    },
+    smtp: {
+      host: "moose.mxrouting.net",
+      port: 465,
+    },
+  },
   tailwindcss: {
     config: {
       theme: {

@@ -3,15 +3,15 @@
 		<div id="testimonial-wrapper">
 			<AppSquares position="top" />
 
-			<div id="text-container">
+			<div id="text-container" v-if="currentTestimonial">
 				<p class="testimonial-heading">
-					“Has become one of my favorite collaborators”
+					“{{ currentTestimonial.heading }}”
 				</p>
 				<p class="testimonial-text">
-					I've had the pleasure of working with Joe on a fast-moving project that has greatly benefited from his talents. Joe is an intelligent, creative, team-oriented, and highly conscientious designer, and he has quickly become one of my favorite collaborators.
+					{{ currentTestimonial.text }}
 				</p>
 				<p class="testimonial-author">
-					Ryan Andersson, VP Global Research & Insights, Herman Miller
+					{{ currentTestimonial.author }}
 				</p>
 			</div>
 
@@ -28,7 +28,44 @@
 </template>
 
 <script setup>
+import { ref, onMounted, watch } from 'vue';
+import { useRoute } from 'vue-router';
 
+const testimonialsList = [
+	{
+		heading: `Has become one of my favorite collaborators`,
+		text: `I've had the pleasure of working with Joe on a fast-moving project that has greatly benefited from his talents. Joe is an intelligent, creative, team-oriented, and highly conscientious designer, and he has quickly become one of my favorite collaborators.`,
+		author: 'Kayla Henry, Product Manager',
+	},
+	{
+		heading: `An incredible mentor`,
+		text: `Joe's guidance and expertise have been instrumental in helping me grow as a designer. His mentorship is second to none.`,
+		author: 'Aidan Powers, Product Designer, Shopify',
+	},
+	{
+		heading: `A design wizard`,
+		text: `Joe's ability to create seamless and visually stunning designs has elevated every project we've worked on together.`,
+		author: 'Vardit Jonasz, Product Manager, Integrate',
+	},
+];
+
+const currentTestimonial = ref(null);
+const route = useRoute();
+
+const updateTestimonial = () => {
+	const randomIndex = Math.floor(Math.random() * testimonialsList.length);
+	currentTestimonial.value = testimonialsList[randomIndex];
+};
+
+// Update testimonial on route change
+watch(route, () => {
+	updateTestimonial();
+});
+
+// Initialize testimonial on mount
+onMounted(() => {
+	updateTestimonial();
+});
 </script>
 
 <style scoped>
@@ -37,11 +74,13 @@
 	}
 
 	#testimonial-wrapper {
-		@apply w-[1024px] border-x border-dashed border-zinc-800 mx-auto relative bg-gradient-to-t from-ps-blue-50/[.025] to-ps-blue-50/0;
+		@apply w-[calc(100%-2rem)];
+		@apply lg:w-[1024px] border-x border-dashed border-zinc-800 mx-auto relative bg-gradient-to-t from-ps-blue-50/[.025] to-ps-blue-50/0;
 	}
 
 	#text-container {
-		@apply text-white w-[768px] mx-auto py-10;
+		@apply w-full px-6;
+		@apply text-white lg:w-[768px] mx-auto py-10 lg:px-0;
 	}
 
 	.testimonial-heading {

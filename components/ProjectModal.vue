@@ -49,11 +49,12 @@ const closeFull = () => {
 }
 
 .modal-content img {
-  @apply rounded-md max-h-[calc(100vh-128px)];
+  @apply rounded-md max-h-[calc(100vh-128px)] max-w-[calc(100vw-24px)];
 }
 
 .image-preview {
-  @apply mt-6 border border-zinc-800 p-6 rounded-sm cursor-pointer;
+  @apply p-4;
+  @apply mt-6 border border-zinc-800 lg:p-6 rounded-sm cursor-pointer;
 	@apply hover:border-zinc-700;
 
 	transition: all 0.3s;

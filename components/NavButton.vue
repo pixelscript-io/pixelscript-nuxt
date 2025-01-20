@@ -6,48 +6,68 @@
 </template>
 
 <script setup>
-	const props = defineProps({
-		label: {
-			type: String,
-			default: 'Button',
-			required: true
-		},
-		hotkey: {
-			type: String,
-			default: 'X',
-			required: true
-		},
-		route: {
-			type: String,
-			default: '/',
-			required: true
-		},
-		footer: {
-			type: Boolean,
-			default: false
-		}
-	});
+import { ref, computed, watch, onMounted, onBeforeUnmount } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
 
-	const route = useRoute()
-	const router = useRouter()
+const props = defineProps({
+  label: {
+    type: String,
+    default: 'Button',
+    required: true,
+  },
+  hotkey: {
+    type: String,
+    default: 'X',
+    required: true,
+  },
+  route: {
+    type: String,
+    default: '/',
+    required: true,
+  },
+  footer: {
+    type: Boolean,
+    default: false,
+  },
+});
 
-	const isActive = computed(() => route.path === props.route)
-	const hotkeyPressed = ref(false)
+const route = useRoute();
+const router = useRouter();
 
-	onMounted(() => {
-		window.addEventListener('keydown', (event) => {
-			if (event.key === props.hotkey.toLowerCase()) {
-				hotkeyPressed.value = true
-				router.push(props.route)
-			}
-		})
+const isActive = computed(() => route.path === props.route);
+const hotkeyPressed = ref(false);
 
-		window.addEventListener('keyup', (event) => {
-			if (event.key === props.hotkey.toLowerCase()) {
-				hotkeyPressed.value = false
-			}
-		})
-	})
+let keydownListener;
+let keyupListener;
+
+const isFocusableElement = (target) =>
+  target.tagName === 'INPUT' || target.tagName === 'TEXTAREA';
+
+const addListeners = () => {
+  if (process.client) {
+    keydownListener = (event) => {
+      if (!isFocusableElement(event.target) && event.key === props.hotkey.toLowerCase()) {
+        hotkeyPressed.value = true;
+        router.push(props.route);
+      }
+    };
+
+    keyupListener = (event) => {
+      if (!isFocusableElement(event.target) && event.key === props.hotkey.toLowerCase()) {
+        hotkeyPressed.value = false;
+      }
+    };
+
+    window.addEventListener('keydown', keydownListener);
+    window.addEventListener('keyup', keyupListener);
+  }
+};
+
+onMounted(() => {
+  if (process.client) {
+    addListeners();
+  }
+});
 </script>
 
 <style>
@@ -73,7 +93,8 @@
 	}
 
 	.nav-button .hotkey {
-		@apply w-5 h-5 bg-transparent border border-zinc-800 rounded-sm flex items-center justify-center text-xs text-zinc-500 uppercase font-medium;
+    @apply hidden;
+		@apply w-5 h-5 bg-transparent border border-zinc-800 rounded-sm lg:flex items-center justify-center text-xs text-zinc-500 uppercase font-medium;
 		font-family: "Source Code Pro", monospace;
 		transition: all 0.1s;
 	}

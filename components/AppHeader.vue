@@ -29,10 +29,12 @@
 	}
 
 	#header-wrapper {
-		@apply w-[1024px] border-x border-dashed border-zinc-800 mx-auto h-14 relative flex items-center justify-between px-6;
+		@apply w-[calc(100%-2rem)];
+		@apply lg:w-[1024px] border-x border-dashed border-zinc-800 mx-auto h-14 relative flex items-center justify-between px-6;
 	}
 
 	#nav-links {
-		@apply flex items-center space-x-4;
+		@apply flex space-x-0;
+		@apply lg:flex items-center lg:space-x-4;
 	}
 </style>

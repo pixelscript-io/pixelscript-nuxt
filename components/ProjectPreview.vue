@@ -59,7 +59,8 @@
 	}
 
 	.project-head {
-		@apply flex items-center justify-between p-8;
+		@apply p-4;
+		@apply flex items-center justify-between lg:p-8;
 	}
 
 	.project-left {
@@ -79,7 +80,8 @@
 	}
 
 	.project-preview {
-		@apply px-8 h-[240px];
+		@apply px-4 h-[120px];
+		@apply lg:px-8 lg:h-[240px];
 	}
 
 	.container-sm > .project-preview {

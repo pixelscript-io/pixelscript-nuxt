@@ -13,7 +13,7 @@
 					<div>
 						<h2>Product Design</h2>
 						<p class="skill-subtext">
-							I've had the chance to work with some of the biggest names in the industry. From large multinational agencies like BBDO and Bates Y&R to innovative companies like Loom, Ueno, and Herman Miller.
+							Designing products isn't just about aesthetics—it's about crafting experiences. I take ideas from concept to completion, creating intuitive interfaces that connect with users and drive results.
 						</p>
 						<div class="app-list">
 							<div class="app">
@@ -39,7 +39,7 @@
 					<div>
 						<h2>UX Research</h2>
 						<p class="skill-subtext">
-							I've had the chance to work with some of the biggest names in the industry. From large multinational agencies like BBDO and Bates Y&R to innovative companies like Loom, Ueno, and Herman Miller.
+							I dive deep into user needs, behaviors, and motivations to inform every decision. By combining research insights with design expertise, I create solutions that feel as seamless as they are thoughtful.
 						</p>
 						<div class="app-list">
 							<div class="app">
@@ -65,7 +65,7 @@
 					<div>
 						<h2>Design Systems</h2>
 						<p class="skill-subtext">
-							I've had the chance to work with some of the biggest names in the industry. From large multinational agencies like BBDO and Bates Y&R to innovative companies like Loom, Ueno, and Herman Miller.
+							Design systems are the foundation of scalable products. I craft systems that align design and development with reusable components and clear documentation.
 						</p>
 						<div class="app-list">
 							<div class="app">
@@ -91,7 +91,7 @@
 					<div>
 						<h2>Front End Development</h2>
 						<p class="skill-subtext">
-							I've had the chance to work with some of the biggest names in the industry. From large multinational agencies like BBDO and Bates Y&R to innovative companies like Loom, Ueno, and Herman Miller.
+							I bring interfaces to life where design meets functionality. Using HTML, CSS, and modern frameworks, I create pixel-perfect, responsive, and accessible experiences that users and developers love.
 						</p>
 						<div class="app-list">
 							<div class="app">
@@ -126,7 +126,9 @@
 
 <style>
 	#skill-grid {
-		@apply grid grid-cols-2 gap-x-8 gap-y-8;
+		@apply grid grid-cols-1 gap-x-8 gap-y-8;
+		@apply md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-8;
+		@apply lg:grid lg:grid-cols-2 lg:gap-x-8 lg:gap-y-8;
 	}
 
 	.skill-subtext {

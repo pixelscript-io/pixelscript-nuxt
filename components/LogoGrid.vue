@@ -1,6 +1,6 @@
 <template>
-  <div class="container mx-auto py-24">
-    <div class="grid grid-cols-4 gap-6 md:grid-cols-3 sm:grid-cols-2">
+  <div class="container mx-auto py-12 lg:py-24">
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 md:grid-cols-3 sm:grid-cols-2">
       <div
         v-for="(logo, index) in logos"
         :key="index"

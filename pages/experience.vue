@@ -5,7 +5,7 @@
 
 			<div id="page-content-container">
 				<h1>Experience</h1>
-				<p class="lead">My personal mission has always been to create solutions that connect companies and their customers in meaningful ways.</p>
+				<p class="lead">Building expertise through impactful roles with industry-leading companies.</p>
 				<hr class="page-divider-short" />
 
 				<div id="company-list">
@@ -75,7 +75,7 @@
 
 					<div class="company-row">
 						<p class="job-title">Lead Product Designer, 
-							<span>California Pools &amp; Landscaping</span>
+							<span>California Pools</span>
 						</p>
 						<div class="job-spacer"></div>
 						<p class="job-year">2019</p>
@@ -117,8 +117,7 @@
 				<LogoGrid :logos="logosList" />
 
 				<h2>Mentorship &amp; Coaching</h2>
-				<p class="small">I've had the chance to work with some of the biggest names in the industry. From large multinational agencies like BBDO and Bates Y&R to innovative companies like Loom, Ueno, and Herman Miller. I've also teamed up with tech giants like Google and a bunch of Fortune 500 companies. On top of that, I've worked with countless startups. Most didn't make it, but a few, like Spotify, hit it big.</p>
-				<p class="small">I've published two books, spoken at design schools for over 15 years, and I write a blog that some people say is "successful"—whatever that means. Over the years, I've coached more than 100 students and designers.</p>
+				<p class="small">I've had the privilege of mentoring designers at all stages of their careers, from aspiring students to seasoned professionals. With over 15 years of experience, I've spoken at design schools, coached more than 100 creatives, and shared my insights through writing and workshops. Whether it's refining skills, navigating challenges, or shaping careers, I'm passionate about helping others succeed in the ever-evolving world of design.</p>
 
 				<MarqueeTestimonials :testimonials="testimonialsList" />
 			</div>
@@ -127,27 +126,27 @@
 </template>
 
 <script setup>
-// Define your testimonials
+
 const testimonialsList = [
-  {
-		text: `I've had the pleasure of working with Anton on a fast-moving project that has greatly benefited from his talents. Anton is an intelligent, creative, team-oriented, and highly conscientious designer, and he has quickly become one of my favorite collaborators.`,
-		author: 'Ryan Andersson, VP Global Research & Insights, Herman Miller'
+	{
+		text: `Joe's ability to transform complex ideas into elegant, user-friendly designs is unmatched. Working with him was a game-changer for our project.`,
+		author: 'Jeff Carterson, CEO, Sevencube'
 	},
 	{
-		text: `I've had the pleasure of working with Anton on a fast-moving project that has greatly benefited from his talents. Anton is an intelligent, creative, team-oriented, and highly conscientious designer, and he has quickly become one of my favorite collaborators.`,
-		author: 'Ryan Andersson, VP Global Research & Insights, Herman Miller'
+		text: `Joe brings a rare combination of technical expertise and creative vision. His insights and designs took our product to the next level.`,
+		author: 'Michael Lee, American Express/Tallwave'
 	},
 	{
-		text: `I've had the pleasure of working with Anton on a fast-moving project that has greatly benefited from his talents. Anton is an intelligent, creative, team-oriented, and highly conscientious designer, and he has quickly become one of my favorite collaborators.`,
-		author: 'Ryan Andersson, VP Global Research & Insights, Herman Miller'
+		text: `Working with Joe was an absolute pleasure. His attention to detail and dedication to user-centered design are truly exceptional.`,
+		author: 'Vardit Jonasz, Product Manager, Integrate'
 	},
 	{
-		text: `I've had the pleasure of working with Anton on a fast-moving project that has greatly benefited from his talents. Anton is an intelligent, creative, team-oriented, and highly conscientious designer, and he has quickly become one of my favorite collaborators.`,
-		author: 'Ryan Andersson, VP Global Research & Insights, Herman Miller'
+		text: `Joe's mentorship has been invaluable for our team. He's not only a skilled designer but also an inspiring coach who helps others grow.`,
+		author: 'Chris Dunn, CEO, ReadyCloud'
 	},
 	{
-		text: `I've had the pleasure of working with Anton on a fast-moving project that has greatly benefited from his talents. Anton is an intelligent, creative, team-oriented, and highly conscientious designer, and he has quickly become one of my favorite collaborators.`,
-		author: 'Ryan Andersson, VP Global Research & Insights, Herman Miller'
+		text: `Joe's innovative approach and commitment to excellence made a significant impact on our product. I couldn't recommend him more highly.`,
+		author: 'Rachel Evans, CPO, California Pools & Landscaping'
 	}
 ]
 

@@ -9,15 +9,16 @@
 
 			<div id="bg-gradient">
 				<div id="text-container">
+					<!-- <img src="/img/headshot_sm.png" alt="Headshot" /> -->
 					<p class="hero-heading">
 						Hi, I'm Joe
 					</p>
 					<p class="hero-subheading">
-						I'm a Product Designer, User Experience Researcher<br/>and Front End Developer based in Washington.
+						I'm a Product Designer, User Experience Researcher and Front End Developer based in Washington.
 					</p>
 					<hr class="hero-divider" />
 					<p class="hero-text">
-						PixelScript is my little personal laboratory where I showcase<br/>my work and experiment by combining pixels with code.
+						PixelScript is my little personal laboratory where I showcase my work and experiment by combining pixels with code.
 					</p>
 				</div>
 			</div>
@@ -35,12 +36,14 @@
 	}
 
 	#hero-wrapper {
-		@apply w-[1024px] border-x border-dashed border-zinc-800 mx-auto h-[440px] relative;
+		@apply w-[calc(100%-2rem)] h-[340px];
+		@apply lg:w-[1024px] border-x border-dashed border-zinc-800 mx-auto lg:h-[440px] relative;
 		background-image: url('/img/circuit.svg');
 	}
 
 	#headshot {
-		@apply h-full bg-transparent aspect-square absolute top-0 right-0 z-10;
+		@apply hidden;
+		@apply lg:block h-full bg-transparent aspect-square absolute top-0 right-0 z-10;
 	}
 
 	#headshot img {
@@ -52,11 +55,21 @@
 	}
 
 	#text-container {
-		@apply text-white w-[768px] mx-auto;
+		@apply w-full px-6;
+		@apply text-white lg:w-[768px] lg:px-0 mx-auto;
+	}
+
+	#text-container p {
+		@apply lg:max-w-[400px];
+	}
+
+	#text-container img {
+		@apply block mb-6 px-4;
+		@apply lg:hidden;
 	}
 
 	.hero-heading {
-		@apply text-2xl font-bold text-ps-blue-50;
+		@apply text-2xl font-bold text-ps-blue-50 mb-2;
 	}
 
 	.hero-subheading {
@@ -68,6 +81,6 @@
 	}
 
 	.hero-text {
-		@apply text-sm text-zinc-300;
+		@apply text-sm text-zinc-300 leading-6;
 	}
 </style>

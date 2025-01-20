@@ -5,8 +5,14 @@
 
 			<div id="page-content-container">
 				<h1>Case Study - Duel</h1>
-				<p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+				<p class="lead">Website Design</p>
 				<hr class="page-divider-short" />
+
+				<p>Duel is a cryptocurrency gambling website focused on maintaining a zero house-edge policy on all games.</p>
+
+				<ProjectModal image="/img/duel_1.png" fullImage="/img/duel_1_full.png" />
+				<ProjectModal image="/img/duel_2.png" fullImage="/img/duel_2_full.png" />
+				<ProjectModal image="/img/duel_3.png" fullImage="/img/duel_3_full.png" />
 			</div>
 		</div>
   </div>

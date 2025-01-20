@@ -13,14 +13,14 @@
           {{ testimonial.author }}
         </p>
 
-        <svg aria-hidden="true" class="bg-grid" style="visibility: visible;">
+        <!-- <svg aria-hidden="true" class="bg-grid" style="visibility: visible;">
           <defs>
             <pattern id="testimonial-grid2" width="12" height="12" patternUnits="userSpaceOnUse" x="-1" y="-1">
               <path d="M.5 20V.5H20" fill="none" stroke-dasharray="0"></path>
             </pattern>
           </defs>
           <rect width="100%" height="100%" stroke-width="0" fill="url(#testimonial-grid2)"></rect>
-        </svg>
+        </svg> -->
       </div>
     </div>
   </div>
