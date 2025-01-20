@@ -17,7 +17,10 @@ export default defineNuxtConfig({
   devtools: {
     enabled: true
   },
-  modules: ['@nuxtjs/tailwindcss', 'nuxt-mail'],
+  modules: ['@nuxtjs/tailwindcss', 'nuxt-mail', 'nuxt-gtag'],
+  gtag: {
+    id: 'G-TK2LQS8XGY'
+  },
   mail: {
     message: {
       to: 'joe@pixelscript.io',
