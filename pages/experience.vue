@@ -114,7 +114,7 @@
 					</div>
 				</div>
 
-				<LogoGrid :logos="logosList" />
+				<!-- <LogoGrid :logos="logosList" /> -->
 
 				<h2>Mentorship &amp; Coaching</h2>
 				<p class="small">I've had the privilege of mentoring designers at all stages of their careers, from aspiring students to seasoned professionals. With over 15 years of experience, I've spoken at design schools, coached more than 100 creatives, and shared my insights through writing and workshops. Whether it's refining skills, navigating challenges, or shaping careers, I'm passionate about helping others succeed in the ever-evolving world of design.</p>
@@ -126,6 +126,12 @@
 </template>
 
 <script setup>
+	useSeoMeta({
+		title: 'PixelScript - Experience',
+		ogTitle: 'PixelScript - Experience',
+		description: 'Joe Berthelot\'s professional experience and career highlights.',
+		ogDescription: 'Joe Berthelot\'s professional experience and career highlights.',
+	})
 
 const testimonialsList = [
 	{
@@ -169,7 +175,7 @@ const logosList = [
 
 <style>
 	#company-list {
-		@apply flex flex-col space-y-4;
+		@apply flex flex-col space-y-4 mb-12;
 	}
 
 	.company-row {

@@ -58,7 +58,8 @@
 	}
 
 	#footer-bottom {
-		@apply flex flex-col space-y-2;
+		@apply w-[200%];
+		@apply flex flex-col space-y-2 lg:w-full;
 	}
 
 	#footer-bottom p {

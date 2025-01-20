@@ -20,7 +20,12 @@
 </template>
 
 <script setup>
-
+	useSeoMeta({
+		title: 'PixelScript - Buzz',
+		ogTitle: 'PixelScript - Buzz',
+		description: 'A mobile messaging application focused on encrypted communication between peers.',
+		ogDescription: 'A mobile messaging application focused on encrypted communication between peers.',
+	})
 </script>
 
 <style>

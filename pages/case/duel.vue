@@ -19,7 +19,12 @@
 </template>
 
 <script setup>
-
+	useSeoMeta({
+		title: 'PixelScript - Duel',
+		ogTitle: 'PixelScript - Duel',
+		description: 'A cryptocurrency gambling website focused on maintaining a zero house-edge policy on all games.',
+		ogDescription: 'A cryptocurrency gambling website focused on maintaining a zero house-edge policy on all games.',
+	})
 </script>
 
 <style>

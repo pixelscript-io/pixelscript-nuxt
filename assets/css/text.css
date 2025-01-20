@@ -18,6 +18,10 @@
 	@apply text-base text-zinc-200 font-medium;
 }
 
+#page-content-container > .lead > a {
+	@apply text-base text-ps-blue-50 font-medium underline;
+}
+
 #page-content-container > p.small {
 	@apply text-sm leading-6 pt-3;
 }

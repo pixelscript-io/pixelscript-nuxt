@@ -19,7 +19,12 @@
 </template>
 
 <script setup>
-
+	useSeoMeta({
+		title: 'PixelScript - LiftLog',
+		ogTitle: 'PixelScript - LiftLog',
+		description: 'A mobile application where users can log and track all of their workout progress.',
+		ogDescription: 'A mobile application where users can log and track all of their workout progress.',
+	})
 </script>
 
 <style>

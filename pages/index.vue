@@ -121,7 +121,12 @@
 </template>
 
 <script setup>
-
+	useSeoMeta({
+		title: 'PixelScript - Joe Berthelot',
+		ogTitle: 'PixelScript - Joe Berthelot',
+		description: 'The personal website and portfolio of Joe Berthelot, Product Designer.',
+		ogDescription: 'The personal website and portfolio of Joe Berthelot, Product Designer.'
+	})
 </script>
 
 <style>

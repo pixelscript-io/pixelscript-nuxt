@@ -19,7 +19,12 @@
 </template>
 
 <script setup>
-
+	useSeoMeta({
+		title: 'PixelScript - Privacy Bee',
+		ogTitle: 'PixelScript - Privacy Bee',
+		description: 'A privacy-focused web application that helps users take control of their online privacy.',
+		ogDescription: 'A privacy-focused web application that helps users take control of their online privacy.',
+	})
 </script>
 
 <style>

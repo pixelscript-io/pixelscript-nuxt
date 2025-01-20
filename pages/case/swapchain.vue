@@ -19,7 +19,12 @@
 </template>
 
 <script setup>
-
+	useSeoMeta({
+		title: 'PixelScript - Swapchain',
+		ogTitle: 'PixelScript - Swapchain',
+		description: 'A cryptocurrency derivative trading platform where users can create futures contracts to go short or long.',
+		ogDescription: 'A cryptocurrency derivative trading platform where users can create futures contracts to go short or long.',
+	})
 </script>
 
 <style>
