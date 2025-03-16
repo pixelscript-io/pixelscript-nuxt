@@ -1,21 +1,44 @@
 <template>
-	<div id="square-1" class="square" :class="position"></div>
-	<div id="square-2" class="square" :class="position"></div>
+	<div id="square-1" class="square" :class="position" role="presentation"></div>
+	<div id="square-2" class="square" :class="position" role="presentation"></div>
 </template>
 
-<script setup>
-	defineProps({
-		position: {
-			type: String,
-			default: 'bottom',
-			required: false
-		}
-	});
+<script setup lang="ts">
+import type { Position } from '~/types';
+
+interface Props {
+	position?: Position;
+}
+
+withDefaults(defineProps<Props>(), {
+	position: 'bottom'
+});
 </script>
 
 <style scoped>
+	@keyframes ripple {
+		0% {
+			box-shadow: 0 0 0 0 rgba(161, 161, 170, 0.4);
+			transform: rotate(45deg) scale(1);
+		}
+		70% {
+			box-shadow: 0 0 0 4px rgba(161, 161, 170, 0);
+			transform: rotate(45deg) scale(1.05);
+		}
+		100% {
+			box-shadow: 0 0 0 0 rgba(161, 161, 170, 0);
+			transform: rotate(45deg) scale(1);
+		}
+	}
+
 	.square {
-		@apply absolute w-2 h-2 bg-zinc-950 border border-zinc-800 rotate-45 z-20;
+		@apply absolute w-2 h-2 bg-zinc-950 border border-zinc-800 rotate-45 z-20 transition-all duration-300;
+		transform-origin: center;
+		will-change: transform, box-shadow;
+	}
+
+	.square:hover {
+		animation: ripple 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 	}
 
 	.bottom {

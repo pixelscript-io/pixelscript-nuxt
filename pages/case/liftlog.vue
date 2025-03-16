@@ -25,6 +25,16 @@
 		description: 'A mobile application where users can log and track all of their workout progress.',
 		ogDescription: 'A mobile application where users can log and track all of their workout progress.',
 	})
+
+	const { addProjectSchema } = useStructuredData()
+
+	// Add structured data for the project
+	addProjectSchema({
+		name: 'LiftLog',
+		description: 'A mobile application where users can log and track all of their workout progress.',
+		image: 'https://pixelscript.io/img/liftlog_1_full.png',
+		datePublished: '2024-03'
+	})
 </script>
 
 <style>

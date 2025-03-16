@@ -1,105 +1,88 @@
 <template>
-	<button class="nav-button group" :class="{ active: isActive, footer: footer }">
+	<button 
+		class="nav-button group" 
+		:class="{ active: isActive }"
+		@click="$emit('click')"
+	>
 		<span class="group-hover:text-zinc-400">{{ label }}</span>
 		<div class="hotkey" :class="{ activeHotkey: hotkeyPressed }">{{ hotkey }}</div>
 	</button>
 </template>
 
 <script setup>
-import { ref, computed, watch, onMounted, onBeforeUnmount } from 'vue';
-import { useRoute, useRouter } from 'vue-router';
+import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 
 const props = defineProps({
-  label: {
-    type: String,
-    default: 'Button',
-    required: true,
-  },
-  hotkey: {
-    type: String,
-    default: 'X',
-    required: true,
-  },
-  route: {
-    type: String,
-    default: '/',
-    required: true,
-  },
-  footer: {
-    type: Boolean,
-    default: false,
-  },
-});
+	label: String,
+	hotkey: String,
+	route: String,
+	footer: Boolean
+})
 
-const route = useRoute();
-const router = useRouter();
+const route = useRoute()
+const router = useRouter()
+const isActive = computed(() => route.path === props.route)
+const hotkeyPressed = ref(false)
 
-const isActive = computed(() => route.path === props.route);
-const hotkeyPressed = ref(false);
+const handleKeydown = (event) => {
+	if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA') return
+	
+	if (event.key.toLowerCase() === props.hotkey.toLowerCase()) {
+		hotkeyPressed.value = true
+		router.push(props.route)
+	}
+}
 
-let keydownListener;
-let keyupListener;
-
-const isFocusableElement = (target) =>
-  target.tagName === 'INPUT' || target.tagName === 'TEXTAREA';
-
-const addListeners = () => {
-  if (process.client) {
-    keydownListener = (event) => {
-      if (!isFocusableElement(event.target) && event.key === props.hotkey.toLowerCase()) {
-        hotkeyPressed.value = true;
-        router.push(props.route);
-      }
-    };
-
-    keyupListener = (event) => {
-      if (!isFocusableElement(event.target) && event.key === props.hotkey.toLowerCase()) {
-        hotkeyPressed.value = false;
-      }
-    };
-
-    window.addEventListener('keydown', keydownListener);
-    window.addEventListener('keyup', keyupListener);
-  }
-};
+const handleKeyup = (event) => {
+	if (event.key.toLowerCase() === props.hotkey.toLowerCase()) {
+		hotkeyPressed.value = false
+	}
+}
 
 onMounted(() => {
-  if (process.client) {
-    addListeners();
-  }
-});
+	window.addEventListener('keydown', handleKeydown)
+	window.addEventListener('keyup', handleKeyup)
+})
+
+onBeforeUnmount(() => {
+	window.removeEventListener('keydown', handleKeydown)
+	window.removeEventListener('keyup', handleKeyup)
+})
 </script>
 
-<style>
-	.nav-button {
-		@apply h-8 px-2 rounded-sm bg-transparent flex items-center space-x-2 focus:outline-none;
-	}
+<style scoped>
+.nav-button {
+	@apply h-8 px-2 rounded-sm bg-transparent flex items-center space-x-2;
+}
 
-	.nav-button span {
-		@apply text-zinc-500 font-normal text-sm;
-		transition: all 0.1s;
-	}
+/* Only show focus styles when using keyboard */
+.nav-button:focus-visible {
+	@apply outline-none ring-2 ring-ps-blue-100;
+}
 
-	.active span {
-		@apply text-ps-blue-50;
-	}
+.nav-button:focus:not(:focus-visible) {
+	@apply outline-none ring-0;
+}
 
-	.active:hover span {
-		@apply !text-ps-blue-50;
-	}
+.nav-button span {
+	@apply text-zinc-500 font-normal text-sm;
+}
 
-	.nav-button.footer {
-		@apply pr-0;
-	}
+.active span {
+	@apply text-ps-blue-50;
+}
 
-	.nav-button .hotkey {
-    @apply hidden;
-		@apply w-5 h-5 bg-transparent border border-zinc-800 rounded-sm lg:flex items-center justify-center text-xs text-zinc-500 uppercase font-medium;
-		font-family: "Source Code Pro", monospace;
-		transition: all 0.1s;
-	}
+.hotkey {
+	@apply hidden lg:flex;
+	@apply w-5 h-5 bg-transparent border border-zinc-800;
+	@apply rounded-sm items-center justify-center;
+	@apply text-xs text-zinc-500 uppercase font-medium;
+	font-family: "Source Code Pro", monospace;
+	transition: all 0.15s ease;
+}
 
-	.hotkey.activeHotkey {
-		@apply border-zinc-400 text-zinc-400;
-	}
+.hotkey.activeHotkey {
+	@apply border-zinc-400 text-zinc-400;
+}
 </style>

@@ -1,6 +1,16 @@
 <template>
 	<div id="hero">
-		<div id="hero-wrapper">
+		<div 
+			id="hero-wrapper" 
+			@mousemove="updateSpotlight" 
+			@mouseleave="hideSpotlight" 
+			ref="heroWrapper"
+		>
+			<CircuitSpotlight 
+				ref="spotlightRef"
+				@spotlight-move="onSpotlightMove"
+			/>
+			
 			<AppSquares />
 
 			<div id="headshot">
@@ -27,7 +37,23 @@
 </template>
 
 <script setup>
+import { ref } from 'vue'
+import CircuitSpotlight from './CircuitSpotlight.vue'
 
+const heroWrapper = ref(null)
+const spotlightRef = ref(null)
+
+const updateSpotlight = (event) => {
+	spotlightRef.value?.updateSpotlight(event)
+}
+
+const hideSpotlight = () => {
+	spotlightRef.value?.hideSpotlight()
+}
+
+const onSpotlightMove = ({ x, y }) => {
+	// Handle spotlight movement if needed
+}
 </script>
 
 <style scoped>
@@ -36,14 +62,15 @@
 	}
 
 	#hero-wrapper {
-		@apply w-[calc(100%-2rem)] h-[340px];
-		@apply lg:w-[1024px] border-x border-dashed border-zinc-800 mx-auto lg:h-[440px] relative;
-		background-image: url('/img/circuit.svg');
+		@apply relative w-[calc(100%-2rem)] h-[340px];
+		@apply lg:w-[1024px] lg:h-[440px] mx-auto;
+		@apply border-x border-dashed border-zinc-800;
 	}
 
 	#headshot {
-		@apply hidden;
-		@apply lg:block h-full bg-transparent aspect-square absolute top-0 right-0 z-10;
+		@apply hidden lg:block;
+		@apply absolute top-0 right-0 z-10;
+		@apply h-full bg-transparent aspect-square;
 	}
 
 	#headshot img {
@@ -51,12 +78,15 @@
 	}
 
 	#bg-gradient {
-		@apply flex flex-col justify-center absolute inset-0 h-full w-full bg-gradient-to-t from-ps-blue-50/[.025] to-ps-blue-50/0 z-[9];
+		@apply absolute inset-0 z-[9];
+		@apply flex flex-col justify-center;
+		@apply bg-gradient-to-t from-ps-blue-50/[.025] to-ps-blue-50/0;
 	}
 
 	#text-container {
 		@apply w-full px-6;
-		@apply text-white lg:w-[768px] lg:px-0 mx-auto;
+		@apply lg:w-[768px] lg:px-0 mx-auto;
+		@apply text-white;
 	}
 
 	#text-container p {

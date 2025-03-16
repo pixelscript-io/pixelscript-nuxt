@@ -121,12 +121,25 @@
 </template>
 
 <script setup>
-	useSeoMeta({
-		title: 'PixelScript - Joe Berthelot',
-		ogTitle: 'PixelScript - Joe Berthelot',
-		description: 'The personal website and portfolio of Joe Berthelot, Product Designer.',
-		ogDescription: 'The personal website and portfolio of Joe Berthelot, Product Designer.'
-	})
+const { updateMeta } = useSeo()
+const { addPersonSchema } = useStructuredData()
+
+updateMeta({
+  title: 'PixelScript - Product Design & Development',
+  description: 'PixelScript is my personal laboratory where pixels meet code. Product Design, User Experience Research and Front End Development.',
+  type: 'website'
+})
+
+// Add structured data for personal information
+addPersonSchema({
+  name: 'Joe Berthelot',
+  jobTitle: 'Product Designer & Front End Developer',
+  image: 'https://pixelscript.io/img/og-image.jpg',
+  sameAs: [
+    'https://www.linkedin.com/in/joeberthelot/',
+    'https://github.com/pixelscript-io'
+  ]
+})
 </script>
 
 <style>

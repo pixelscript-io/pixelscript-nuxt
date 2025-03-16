@@ -1,0 +1,129 @@
+.logo-icon {
+  pointer-events: all;
+}
+
+.logo-icon path {
+  transition: fill 0.8s ease-in-out;
+  will-change: fill;
+}
+
+/* Define animations for each square */
+.logo-icon:hover path:nth-child(1) {
+  animation: colorSwap1 4s infinite;
+}
+
+.logo-icon:hover path:nth-child(2) {
+  animation: colorSwap2 4s infinite;
+  animation-delay: 0.2s;
+}
+
+.logo-icon:hover path:nth-child(3) {
+  animation: colorSwap3 4s infinite;
+  animation-delay: 0.4s;
+}
+
+.logo-icon:hover path:nth-child(4) {
+  animation: colorSwap4 4s infinite;
+  animation-delay: 0.6s;
+}
+
+.logo-icon:hover path:nth-child(5) {
+  animation: colorSwap5 4s infinite;
+  animation-delay: 0.8s;
+}
+
+.logo-icon:hover path:nth-child(6) {
+  animation: colorSwap6 4s infinite;
+  animation-delay: 1s;
+}
+
+.logo-icon:hover path:nth-child(7) {
+  animation: colorSwap7 4s infinite;
+  animation-delay: 1.2s;
+}
+
+.logo-icon:hover path:nth-child(8) {
+  animation: colorSwap8 4s infinite;
+  animation-delay: 1.4s;
+}
+
+.logo-icon:hover path:nth-child(9) {
+  animation: colorSwap9 4s infinite;
+  animation-delay: 1.6s;
+}
+
+.logo-icon:hover path:nth-child(10) {
+  animation: colorSwap10 4s infinite;
+  animation-delay: 1.8s;
+}
+
+/* Color swap animations */
+@keyframes colorSwap1 {
+  0%, 100% { fill: #0F62FE; }
+  25% { fill: #0043CE; }
+  50% { fill: #4589FF; }
+  75% { fill: #78A9FF; }
+}
+
+@keyframes colorSwap2 {
+  0%, 100% { fill: #0043CE; }
+  25% { fill: #4589FF; }
+  50% { fill: #78A9FF; }
+  75% { fill: #A6C8FF; }
+}
+
+@keyframes colorSwap3 {
+  0%, 100% { fill: #4589FF; }
+  25% { fill: #78A9FF; }
+  50% { fill: #A6C8FF; }
+  75% { fill: #33B1FF; }
+}
+
+@keyframes colorSwap4 {
+  0%, 100% { fill: #78A9FF; }
+  25% { fill: #A6C8FF; }
+  50% { fill: #33B1FF; }
+  75% { fill: #82CFFF; }
+}
+
+@keyframes colorSwap5 {
+  0%, 100% { fill: #A6C8FF; }
+  25% { fill: #33B1FF; }
+  50% { fill: #82CFFF; }
+  75% { fill: #1192E8; }
+}
+
+@keyframes colorSwap6 {
+  0%, 100% { fill: #33B1FF; }
+  25% { fill: #82CFFF; }
+  50% { fill: #1192E8; }
+  75% { fill: #0072C3; }
+}
+
+@keyframes colorSwap7 {
+  0%, 100% { fill: #82CFFF; }
+  25% { fill: #1192E8; }
+  50% { fill: #0072C3; }
+  75% { fill: #00539A; }
+}
+
+@keyframes colorSwap8 {
+  0%, 100% { fill: #1192E8; }
+  25% { fill: #0072C3; }
+  50% { fill: #00539A; }
+  75% { fill: #0F62FE; }
+}
+
+@keyframes colorSwap9 {
+  0%, 100% { fill: #0072C3; }
+  25% { fill: #00539A; }
+  50% { fill: #0F62FE; }
+  75% { fill: #0043CE; }
+}
+
+@keyframes colorSwap10 {
+  0%, 100% { fill: #00539A; }
+  25% { fill: #0F62FE; }
+  50% { fill: #0043CE; }
+  75% { fill: #4589FF; }
+}

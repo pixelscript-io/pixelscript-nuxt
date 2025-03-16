@@ -10,19 +10,27 @@
 
 				<div id="company-list">
 					<div class="company-row">
-						<p class="job-title">Lead Product Designer, 
-							<span>Duel</span>
-						</p>
-						<div class="job-spacer"></div>
-						<p class="job-year">2024</p>
-					</div>
-
-					<div class="company-row">
 						<p class="job-title">Lead UX Designer, 
 							<span>Privacy Bee</span>
 						</p>
 						<div class="job-spacer"></div>
-						<p class="job-year">2024</p>
+						<div class="year-container">
+							<p class="job-year">2024</p>
+							<div class="year-spacer hidden md:block"></div>
+							<p class="job-year hidden md:block">2025</p>
+						</div>
+					</div>
+
+					<div class="company-row">
+						<p class="job-title">Lead Product Designer, 
+							<span>Duel</span>
+						</p>
+						<div class="job-spacer"></div>
+						<div class="year-container">
+							<p class="job-year">2024</p>
+							<div class="year-spacer hidden md:block"></div>
+							<p class="job-year hidden md:block">2024</p>
+						</div>
 					</div>
 
 					<div class="company-row">
@@ -30,7 +38,11 @@
 							<span>LiftLog</span>
 						</p>
 						<div class="job-spacer"></div>
-						<p class="job-year">2023</p>
+						<div class="year-container">
+							<p class="job-year">2023</p>
+							<div class="year-spacer hidden md:block"></div>
+							<p class="job-year hidden md:block">2024</p>
+						</div>
 					</div>
 
 					<div class="company-row">
@@ -38,7 +50,11 @@
 							<span>JubyCards</span>
 						</p>
 						<div class="job-spacer"></div>
-						<p class="job-year">2023</p>
+						<div class="year-container">
+							<p class="job-year">2022</p>
+							<div class="year-spacer hidden md:block"></div>
+							<p class="job-year hidden md:block">2024</p>
+						</div>
 					</div>
 
 					<div class="company-row">
@@ -46,7 +62,11 @@
 							<span>ArfinnMed</span>
 						</p>
 						<div class="job-spacer"></div>
-						<p class="job-year">2023</p>
+						<div class="year-container">
+							<p class="job-year">2022</p>
+							<div class="year-spacer hidden md:block"></div>
+							<p class="job-year hidden md:block">2023</p>
+						</div>
 					</div>
 
 					<div class="company-row">
@@ -54,7 +74,11 @@
 							<span>GraphicsFlow</span>
 						</p>
 						<div class="job-spacer"></div>
-						<p class="job-year">2021</p>
+						<div class="year-container">
+							<p class="job-year">2021</p>
+							<div class="year-spacer hidden md:block"></div>
+							<p class="job-year hidden md:block">2023</p>
+						</div>
 					</div>
 
 					<div class="company-row">
@@ -62,7 +86,11 @@
 							<span>AppsFlyer</span>
 						</p>
 						<div class="job-spacer"></div>
-						<p class="job-year">2019</p>
+						<div class="year-container">
+							<p class="job-year">2019</p>
+							<div class="year-spacer hidden md:block"></div>
+							<p class="job-year hidden md:block">2020</p>
+						</div>
 					</div>
 
 					<div class="company-row">
@@ -70,7 +98,11 @@
 							<span>Tallwave</span>
 						</p>
 						<div class="job-spacer"></div>
-						<p class="job-year">2019</p>
+						<div class="year-container">
+							<p class="job-year">2019</p>
+							<div class="year-spacer hidden md:block"></div>
+							<p class="job-year hidden md:block">2020</p>
+						</div>
 					</div>
 
 					<div class="company-row">
@@ -78,7 +110,11 @@
 							<span>California Pools</span>
 						</p>
 						<div class="job-spacer"></div>
-						<p class="job-year">2019</p>
+						<div class="year-container">
+							<p class="job-year">2019</p>
+							<div class="year-spacer hidden md:block"></div>
+							<p class="job-year hidden md:block">2019</p>
+						</div>
 					</div>
 
 					<div class="company-row">
@@ -86,7 +122,11 @@
 							<span>Swapchain</span>
 						</p>
 						<div class="job-spacer"></div>
-						<p class="job-year">2017</p>
+						<div class="year-container">
+							<p class="job-year">2017</p>
+							<div class="year-spacer hidden md:block"></div>
+							<p class="job-year hidden md:block">2018</p>
+						</div>
 					</div>
 
 					<div class="company-row">
@@ -94,7 +134,11 @@
 							<span>Integrate</span>
 						</p>
 						<div class="job-spacer"></div>
-						<p class="job-year">2015</p>
+						<div class="year-container">
+							<p class="job-year">2015</p>
+							<div class="year-spacer hidden md:block"></div>
+							<p class="job-year hidden md:block">2019</p>
+						</div>
 					</div>
 
 					<div class="company-row">
@@ -102,7 +146,11 @@
 							<span>ReadyCloud</span>
 						</p>
 						<div class="job-spacer"></div>
-						<p class="job-year">2013</p>
+						<div class="year-container">
+							<p class="job-year">2013</p>
+							<div class="year-spacer hidden md:block"></div>
+							<p class="job-year hidden md:block">2015</p>
+						</div>
 					</div>
 
 					<div class="company-row">
@@ -110,7 +158,11 @@
 							<span>NetShapers</span>
 						</p>
 						<div class="job-spacer"></div>
-						<p class="job-year">2010</p>
+						<div class="year-container">
+							<p class="job-year">2010</p>
+							<div class="year-spacer hidden md:block"></div>
+							<p class="job-year hidden md:block">2013</p>
+						</div>
 					</div>
 				</div>
 
@@ -179,7 +231,7 @@ const logosList = [
 	}
 
 	.company-row {
-		@apply flex space-x-4 items-center;
+		@apply flex items-center space-x-4;
 	}
 
 	.company-row .job-title {
@@ -190,12 +242,22 @@ const logosList = [
 		@apply text-zinc-500;
 	}
 
-	.company-row .job-spacer {
+	.job-spacer {
 		@apply flex-1 h-[1px] bg-zinc-900;
 	}
 
 	.company-row .job-year {
 		@apply text-sm text-zinc-200;
 		font-family: "Source Code Pro", monospace;
+	}
+
+	.year-container {
+		@apply flex items-center space-x-2;
+		min-width: fit-content;
+	}
+
+	.year-spacer {
+		@apply h-[1px] bg-zinc-900;
+		width: 24px;
 	}
 </style>
