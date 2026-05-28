@@ -17,7 +17,7 @@
 						<div class="year-container">
 							<p class="job-year">2024</p>
 							<div class="year-spacer hidden md:block"></div>
-							<p class="job-year hidden md:block">2025</p>
+							<p class="job-year hidden md:block">2026</p>
 						</div>
 					</div>
 
