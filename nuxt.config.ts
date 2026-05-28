@@ -6,19 +6,19 @@ export default defineNuxtConfig({
     head: {
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
-      title: 'PixelScript - Product Design & Development',
+      title: 'PixelScript - Joe Berthelot',
       meta: [
         { name: 'description', content: 'PixelScript is a personal laboratory where pixels meet code. Product Design, User Experience Research and Front End Development.' },
         { name: 'format-detection', content: 'telephone=no' },
         { name: 'theme-color', content: '#18181B' },
         // Open Graph
         { property: 'og:type', content: 'website' },
-        { property: 'og:title', content: 'PixelScript - Product Design & Development' },
+        { property: 'og:title', content: 'PixelScript - Joe Berthelot' },
         { property: 'og:description', content: 'PixelScript is a personal laboratory where pixels meet code. Product Design, User Experience Research and Front End Development.' },
         { property: 'og:image', content: '/img/og-image.jpg' },
         // Twitter
         { name: 'twitter:card', content: 'summary_large_image' },
-        { name: 'twitter:title', content: 'PixelScript - Product Design & Development' },
+        { name: 'twitter:title', content: 'PixelScript - Joe Berthelot' },
         { name: 'twitter:description', content: 'PixelScript is a personal laboratory where pixels meet code. Product Design, User Experience Research and Front End Development.' },
         { name: 'twitter:image', content: '/img/og-image.jpg' }
       ],

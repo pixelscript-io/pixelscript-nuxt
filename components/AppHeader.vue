@@ -23,7 +23,7 @@
 					<NavButton label="Home" hotkey="A" route="/" @click="goTo('/')" />
 					<NavButton label="Experience" hotkey="S" route="/experience" @click="goTo('/experience')" />
 					<!-- <NavButton label="Work" hotkey="D" route="/work" @click="goTo('/work')" /> -->
-					<NavButton label="Contact" hotkey="F" route="/contact" @click="goTo('/contact')" />
+					<NavButton label="Contact" hotkey="D" route="/contact" @click="goTo('/contact')" />
 				</div>
 			</nav>
 		</div>

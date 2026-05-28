@@ -21,7 +21,7 @@
 					<NavButton label="Home" hotkey="A" route="/" :footer="true" @click="goTo('/')" />
 					<NavButton label="Experience" hotkey="S" route="/experience" :footer="true" @click="goTo('/experience')" />
 					<!-- <NavButton label="Work" hotkey="D" route="/work" :footer="true" @click="goTo('/work')" /> -->
-					<NavButton label="Contact" hotkey="F" route="/contact" :footer="true" @click="goTo('/contact')" />
+					<NavButton label="Contact" hotkey="D" route="/contact" :footer="true" @click="goTo('/contact')" />
 				</div>
 			</div>
 		</div>
