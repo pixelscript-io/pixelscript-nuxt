@@ -4,7 +4,8 @@
 		<div 
 			class="circuit-highlight" 
 			:style="spotlightStyle"
-		></div>
+		>
+		</div>
 	</div>
 </template>
 
@@ -71,7 +72,14 @@ const spotlightStyle = computed(() => ({
 .circuit-base,
 .circuit-highlight {
 	@apply absolute inset-0;
-	background-image: url('/img/circuit.svg');
+	position: fixed;
+	inset: 0;
+	pointer-events: none;
+	z-index: 0;
+	background-image:
+		linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+	background-size: 32px 32px;
 }
 
 .circuit-base {

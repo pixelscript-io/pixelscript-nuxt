@@ -10,6 +10,8 @@
 				ref="spotlightRef"
 				@spotlight-move="onSpotlightMove"
 			/>
+
+			<GridPulseCanvas :intensity="0.3" />
 			
 			<AppSquares />
 
@@ -21,7 +23,18 @@
 				<div id="text-container">
 					<!-- <img src="/img/headshot_sm.png" alt="Headshot" /> -->
 					<p class="hero-heading">
-						Hi, I'm Joe
+						Hi, I'm Joe and I
+						<svg
+							aria-hidden="true"
+							viewBox="0 0 24 24"
+							class="hero-heart inline-block align-[-0.12em] mx-1 h-[1em] w-[1em] text-ps-blue-100"
+							fill="currentColor"
+						>
+							<path
+								d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+							/>
+						</svg>
+						CSS
 					</p>
 					<p class="hero-subheading">
 						I'm a Design System Engineer bridging the gap between pixel-perfect design systems and scalable frontend code.</p>
@@ -38,6 +51,7 @@
 <script setup>
 import { ref } from 'vue'
 import CircuitSpotlight from './CircuitSpotlight.vue'
+import GridPulseCanvas from './GridPulseCanvas.client.vue'
 
 const heroWrapper = ref(null)
 const spotlightRef = ref(null)
@@ -68,7 +82,7 @@ const onSpotlightMove = ({ x, y }) => {
 
 	#headshot {
 		@apply hidden lg:block;
-		@apply absolute top-0 right-0 z-10;
+		@apply absolute top-0 right-0 z-[49];
 		@apply h-full bg-transparent aspect-square;
 	}
 
@@ -111,5 +125,35 @@ const onSpotlightMove = ({ x, y }) => {
 
 	.hero-text {
 		@apply text-sm text-zinc-300 leading-6;
+	}
+
+	.hero-heart {
+		transform-origin: center;
+		will-change: transform;
+	}
+
+	.hero-heart:hover {
+		animation: heroHeartSpinPulse 520ms cubic-bezier(0.2, 0.9, 0.2, 1) both;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.hero-heart:hover {
+			animation: none;
+		}
+	}
+
+	@keyframes heroHeartSpinPulse {
+		0% {
+			transform: rotate(0deg) scale(1);
+		}
+		60% {
+			transform: rotate(360deg) scale(1);
+		}
+		78% {
+			transform: rotate(360deg) scale(1.18);
+		}
+		100% {
+			transform: rotate(360deg) scale(1);
+		}
 	}
 </style>

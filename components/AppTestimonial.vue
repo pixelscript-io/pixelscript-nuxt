@@ -3,6 +3,8 @@
 		<div id="testimonial-wrapper">
 			<AppSquares position="top" />
 
+			<GridPulseCanvas :grid-size="24" :intensity="0.22" />
+
 			<div id="text-container" v-if="currentTestimonial">
 				<p class="testimonial-heading">
 					“{{ currentTestimonial.heading }}”
@@ -14,15 +16,6 @@
 					{{ currentTestimonial.author }}
 				</p>
 			</div>
-
-			<svg aria-hidden="true" class="bg-grid" style="visibility: visible;">
-				<defs>
-					<pattern id="testimonial-grid" width="20" height="20" patternUnits="userSpaceOnUse" x="-1" y="-1">
-						<path d="M.5 20V.5H20" fill="none" stroke-dasharray="0"></path>
-					</pattern>
-				</defs>
-				<rect width="100%" height="100%" stroke-width="0" fill="url(#testimonial-grid)"></rect>
-			</svg>
 		</div>
 	</div>
 </template>
@@ -30,6 +23,7 @@
 <script setup>
 import { ref, onMounted, watch } from 'vue';
 import { useRoute } from 'vue-router';
+import GridPulseCanvas from './GridPulseCanvas.client.vue'
 
 const testimonialsList = [
 	{
@@ -76,11 +70,16 @@ onMounted(() => {
 	#testimonial-wrapper {
 		@apply w-[calc(100%-2rem)];
 		@apply lg:w-[1024px] border-x border-dashed border-zinc-800 mx-auto relative bg-gradient-to-t from-ps-blue-50/[.025] to-ps-blue-50/0;
+		background-image:
+			linear-gradient(rgba(0, 71, 255, 0.04) 1px, transparent 1px),
+			linear-gradient(90deg, rgba(0, 71, 255, 0.04) 1px, transparent 1px);
+		background-size: 24px 24px;
 	}
 
 	#text-container {
 		@apply w-full px-6;
 		@apply text-white lg:w-[768px] mx-auto py-10 lg:px-0;
+		@apply relative z-10;
 	}
 
 	.testimonial-heading {
@@ -93,9 +92,5 @@ onMounted(() => {
 
 	.testimonial-author {
 		@apply text-xs text-zinc-500 pt-10;
-	}
-
-	.bg-grid {
-		@apply pointer-events-none absolute inset-0 h-full w-full fill-ps-blue-50/25 stroke-ps-blue-50/25 [mask-image:linear-gradient(to_bottom,_#ffffffad,_transparent)] opacity-[.30] rotate-180;
 	}
 </style>

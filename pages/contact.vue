@@ -56,7 +56,7 @@
     ></textarea>
   </div>
 
-  <h2 class="mb-4">Services</h2>
+  <!-- <h2 class="mb-4">Services</h2>
   <div class="form-group-checkbox">
     <input
       type="checkbox"
@@ -88,7 +88,7 @@
       v-model="formData.services.other"
     />
     <label for="other">Other</label>
-  </div>
+  </div> -->
 
   <button :disabled="loading" type="submit">
     {{ loading ? 'Sending...' : 'Send message' }}
@@ -114,12 +114,12 @@ const formData = reactive({
   lastName: '',
   email: '',
   message: '',
-  services: {
-    productDesign: false,
-    frontend: false,
-    mentorship: false,
-    other: false,
-  },
+  // services: {
+  //   productDesign: false,
+  //   frontend: false,
+  //   mentorship: false,
+  //   other: false,
+  // },
 });
 
 const sent = ref(false);
@@ -134,9 +134,9 @@ const handleSubmit = () => {
     return;
   }
 
-  const selectedServices = Object.keys(formData.services)
-    .filter((key) => formData.services[key])
-    .join(', ');
+  // const selectedServices = Object.keys(formData.services)
+  //   .filter((key) => formData.services[key])
+  //   .join(', ');
 
   const emailContent = `
     First Name: ${firstName}
@@ -209,7 +209,7 @@ textarea:focus {
 }
 
 button {
-  @apply w-full mt-8 py-2 bg-ps-blue-100 text-white text-sm font-medium rounded-[4px];
+  @apply w-full mt-2 py-2 bg-ps-blue-100 text-white text-sm font-medium rounded-[4px];
 	@apply hover:bg-ps-blue-100/90 transition-all duration-100;
 }
 </style>

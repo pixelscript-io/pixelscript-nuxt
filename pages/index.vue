@@ -10,10 +10,10 @@
 				<hr class="page-divider" />
 
 				<div id="skill-grid">
-					<div>
+					<div class="glass-card">
 						<h2>Product Design</h2>
 						<p class="skill-subtext">
-							Designing products isn't just about aesthetics—it's about crafting experiences. I take ideas from concept to completion, creating intuitive interfaces that connect with users and drive results.
+							Designing products isn't just about aesthetics, it's about crafting experiences. I take ideas from concept to completion, creating intuitive interfaces that connect with users and drive results.
 						</p>
 						<div class="app-list">
 							<div class="app">
@@ -36,7 +36,7 @@
 							</div>
 						</div>
 					</div>
-					<div>
+					<div class="glass-card">
 						<h2>UX Research</h2>
 						<p class="skill-subtext">
 							I dive deep into user needs, behaviors, and motivations to inform every decision. By combining research insights with design expertise, I create solutions that feel as seamless as they are thoughtful.
@@ -62,7 +62,7 @@
 							</div>
 						</div>
 					</div>
-					<div>
+					<div class="glass-card">
 						<h2>Design Systems</h2>
 						<p class="skill-subtext">
 							Design systems are the foundation of scalable products. I craft systems that align design and development with reusable components and clear documentation.
@@ -88,10 +88,10 @@
 							</div>
 						</div>
 					</div>
-					<div>
+					<div class="glass-card">
 						<h2>Front End Development</h2>
 						<p class="skill-subtext">
-							I bring interfaces to life where design meets functionality. Using HTML, CSS, and modern frameworks, I create pixel-perfect, responsive, and accessible experiences that users and developers love.
+							I bring interfaces to life where design meets functionality. Using code and modern frameworks, I create pixel-perfect experiences that users and devs love.
 						</p>
 						<div class="app-list">
 							<div class="app">
@@ -125,12 +125,11 @@ const { updateMeta } = useSeo()
 const { addPersonSchema } = useStructuredData()
 
 updateMeta({
-  title: 'PixelScript - Product Design & Development',
+  title: 'PixelScript - Joe Berthelot',
   description: 'PixelScript is my personal laboratory where pixels meet code. Product Design, User Experience Research and Front End Development.',
   type: 'website'
 })
 
-// Add structured data for personal information
 addPersonSchema({
   name: 'Joe Berthelot',
   jobTitle: 'Product Designer & Front End Developer',
@@ -147,6 +146,25 @@ addPersonSchema({
 		@apply grid grid-cols-1 gap-x-8 gap-y-8;
 		@apply md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-8;
 		@apply lg:grid lg:grid-cols-2 lg:gap-x-8 lg:gap-y-8;
+	}
+
+	.glass-card {
+		@apply relative p-6 pb-2;
+		@apply border border-white/10 ring-0 ring-white/10;
+		@apply bg-white/[0.01] backdrop-blur-xl;
+		/* @apply shadow-[0_12px_40px_rgba(0,0,0,0.35)]; */
+	}
+
+	.glass-card::before {
+		content: '';
+		@apply pointer-events-none absolute inset-0;
+		background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0));
+		opacity: 0.3;
+	}
+
+	.glass-card > * {
+		position: relative;
+		z-index: 1;
 	}
 
 	.skill-subtext {
