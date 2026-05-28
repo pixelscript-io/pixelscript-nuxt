@@ -24,11 +24,10 @@
 						Hi, I'm Joe
 					</p>
 					<p class="hero-subheading">
-						I'm a Product Designer, User Experience Researcher and Front End Developer based in Washington.
-					</p>
+						I'm a Design System Engineer bridging the gap between pixel-perfect design systems and scalable frontend code.</p>
 					<hr class="hero-divider" />
 					<p class="hero-text">
-						PixelScript is my little personal laboratory where I showcase my work and experiment by combining pixels with code.
+						PixelScript is my little personal laboratory where I experiment by combining pixels with code.
 					</p>
 				</div>
 			</div>

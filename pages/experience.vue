@@ -10,7 +10,7 @@
 
 				<div id="company-list">
 					<div class="company-row">
-						<p class="job-title">Lead UX Designer, 
+						<p class="job-title">Lead Design System Engineer, 
 							<span>Privacy Bee</span>
 						</p>
 						<div class="job-spacer"></div>
@@ -46,8 +46,8 @@
 					</div>
 
 					<div class="company-row">
-						<p class="job-title">Lead Front End Developer, 
-							<span>JubyCards</span>
+						<p class="job-title">Sr. UI Engineer, 
+							<span>Sevencube</span>
 						</p>
 						<div class="job-spacer"></div>
 						<div class="year-container">

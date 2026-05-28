@@ -4,8 +4,8 @@
 
 		<div id="page-content">
 			<div id="page-content-container">
-				<p>I've dedicated the last fifteen years to building sophisticated and intuitive products for clients of all sizes, ranging from small startups to large corporations.</p>
-				<p>I combine my passion for meticulous visual design, user experience research and CSS wizardry to create pixel-perfect digital experiences.</p>
+				<p>For the past fifteen years, I've architected scalable UI foundations and component systems for companies ranging from agile startups to global enterprises.</p>
+				<p>I combine a passion for meticulous visual engineering with modern design tokens and utility-first code to build robust component libraries that accelerate developer velocity.</p>
 
 				<hr class="page-divider" />
 
