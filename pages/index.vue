@@ -7,9 +7,67 @@
 				<p>For the past fifteen years, I've architected scalable UI foundations and component systems for companies ranging from agile startups to global enterprises.</p>
 				<p>I combine a passion for meticulous visual engineering with modern design tokens and utility-first code to build robust component libraries that accelerate developer velocity.</p>
 
-				<hr class="page-divider" />
+				<PulseLine />
 
 				<div id="skill-grid">
+					<div class="glass-card">
+						<h2>Design Systems</h2>
+						<p class="skill-subtext">
+							Design systems are the foundation of scalable products. I craft systems that align design and development with reusable components and clear documentation.
+						</p>
+						<div class="app-list">
+							<div class="app">
+								<div class="app-logo">
+									<img src="/img/logo_storybook.svg" alt="Storybook" />
+								</div>
+								<p class="app-name">Storybook</p>
+							</div>
+							<!-- <div class="app">
+								<div class="app-logo">
+									<img src="/img/logo_vitepress.svg" alt="VitePress" />
+								</div>
+								<p class="app-name">VitePress</p>
+							</div> -->
+							<div class="app">
+								<div class="app-logo">
+									<img src="/img/logo_supernova.svg" alt="Supernova" />
+								</div>
+								<p class="app-name">Supernova</p>
+							</div>
+							<div class="app">
+								<div class="app-logo">
+									<img src="/img/logo_styledictionary.svg" alt="Style Dictionary" />
+								</div>
+								<p class="app-name">Style Dictionary</p>
+							</div>
+						</div>
+					</div>
+					<div class="glass-card">
+						<h2>Front End Development</h2>
+						<p class="skill-subtext">
+							I bring interfaces to life where design meets functionality. Using code and modern frameworks, I create pixel-perfect experiences that users and devs love.
+						</p>
+						<div class="app-list">
+							<div class="app">
+								<div class="app-logo">
+									<img src="/img/logo_vscode.svg" alt="Visual Studio Code" />
+								</div>
+								<p class="app-name">Visual Studio Code</p>
+							</div>
+							<div class="app">
+								<div class="app-logo">
+									<img src="/img/logo_vue.svg" alt="Vue" />
+								</div>
+								<p class="app-name">Vue</p>
+							</div>
+							<div class="app">
+								<div class="app-logo">
+									<img src="/img/logo_css.svg" alt="CSS" />
+								</div>
+								<p class="app-name">CSS</p>
+							</div>
+						</div>
+					</div>
 					<div class="glass-card">
 						<h2>Product Design</h2>
 						<p class="skill-subtext">
@@ -62,58 +120,6 @@
 							</div>
 						</div>
 					</div>
-					<div class="glass-card">
-						<h2>Design Systems</h2>
-						<p class="skill-subtext">
-							Design systems are the foundation of scalable products. I craft systems that align design and development with reusable components and clear documentation.
-						</p>
-						<div class="app-list">
-							<div class="app">
-								<div class="app-logo">
-									<img src="/img/logo_storybook.svg" alt="Storybook" />
-								</div>
-								<p class="app-name">Storybook</p>
-							</div>
-							<div class="app">
-								<div class="app-logo">
-									<img src="/img/logo_vitepress.svg" alt="VitePress" />
-								</div>
-								<p class="app-name">VitePress</p>
-							</div>
-							<div class="app">
-								<div class="app-logo">
-									<img src="/img/logo_supernova.svg" alt="Supernova" />
-								</div>
-								<p class="app-name">Supernova</p>
-							</div>
-						</div>
-					</div>
-					<div class="glass-card">
-						<h2>Front End Development</h2>
-						<p class="skill-subtext">
-							I bring interfaces to life where design meets functionality. Using code and modern frameworks, I create pixel-perfect experiences that users and devs love.
-						</p>
-						<div class="app-list">
-							<div class="app">
-								<div class="app-logo">
-									<img src="/img/logo_vscode.svg" alt="Visual Studio Code" />
-								</div>
-								<p class="app-name">Visual Studio Code</p>
-							</div>
-							<div class="app">
-								<div class="app-logo">
-									<img src="/img/logo_vue.svg" alt="Vue" />
-								</div>
-								<p class="app-name">Vue</p>
-							</div>
-							<div class="app">
-								<div class="app-logo">
-									<img src="/img/logo_css.svg" alt="CSS" />
-								</div>
-								<p class="app-name">CSS</p>
-							</div>
-						</div>
-					</div>
 				</div>
 			</div>
 		</div>
@@ -146,25 +152,6 @@ addPersonSchema({
 		@apply grid grid-cols-1 gap-x-8 gap-y-8;
 		@apply md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-8;
 		@apply lg:grid lg:grid-cols-2 lg:gap-x-8 lg:gap-y-8;
-	}
-
-	.glass-card {
-		@apply relative p-6 pb-2;
-		@apply border border-white/10 ring-0 ring-white/10;
-		@apply bg-white/[0.01] backdrop-blur-xl;
-		/* @apply shadow-[0_12px_40px_rgba(0,0,0,0.35)]; */
-	}
-
-	.glass-card::before {
-		content: '';
-		@apply pointer-events-none absolute inset-0;
-		background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0));
-		opacity: 0.3;
-	}
-
-	.glass-card > * {
-		position: relative;
-		z-index: 1;
 	}
 
 	.skill-subtext {

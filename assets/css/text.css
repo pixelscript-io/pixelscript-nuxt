@@ -14,6 +14,60 @@
 	@apply text-2xl text-ps-blue-50 font-bold pb-2;
 }
 
+#page-content-container > h2 {
+	@apply text-xl text-ps-blue-50 font-bold pb-2;
+}
+
+#page-content-container > h3 {
+	@apply text-lg text-ps-blue-50 font-bold pb-2;
+}
+
+#page-content-container > p + h2,
+#page-content-container > ul + h2,
+#page-content-container > ol + h2,
+#page-content-container > p + h3,
+#page-content-container > ul + h3 {
+	@apply pt-12;
+}
+
+#page-content-container > ol + p,
+#page-content-container > ol + h3 {
+	@apply pt-4;
+}
+
+#page-content-container > ul {
+	@apply list-none;
+}
+
+#page-content-container > ol {
+	@apply list-decimal pl-6;
+}
+
+#page-content-container > ul > li,
+#page-content-container > ol > li {
+	@apply text-base text-zinc-300 mt-4;
+}
+
+#page-content-container > ul > li {
+	@apply relative pl-6;
+}
+
+#page-content-container > ol > li {
+	@apply relative pl-1;
+}
+
+#page-content-container > ol > li:not(:last-child)::after {
+	content: '';
+	@apply absolute -left-[0.85rem] top-[1.35em] w-px bg-zinc-700;
+	height: calc(100% + 0.5rem);
+}
+
+#page-content-container > ul > li::before {
+	content: '';
+	@apply absolute left-0 top-[0.65em] w-1.5 h-1.5 bg-ps-blue-100;
+	transform: rotate(45deg);
+}
+
 #page-content-container > .lead {
 	@apply text-base text-zinc-200 font-medium;
 }

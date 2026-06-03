@@ -4,6 +4,7 @@
 			<div id="subpage-bg"></div>
 
 			<div id="page-content-container">
+				<CaseStudyBack />
 				<h1>Case Study - LiftLog</h1>
 				<p class="lead">Branding &amp; Mobile User Interface Design</p>
 				<hr class="page-divider-short" />

@@ -166,7 +166,8 @@
 					</div>
 				</div>
 
-				<!-- <LogoGrid :logos="logosList" /> -->
+				<!-- <h2>Companies I've worked with</h2>
+				<LogoGrid :logos="logosList" /> -->
 
 				<h2>Mentorship &amp; Coaching</h2>
 				<p class="small">I've had the privilege of mentoring designers at all stages of their careers, from aspiring students to seasoned professionals. With over 15 years of experience, I've spoken at design schools, coached more than 100 creatives, and shared my insights through writing and workshops. Whether it's refining skills, navigating challenges, or shaping careers, I'm passionate about helping others succeed in the ever-evolving world of design.</p>
@@ -209,18 +210,14 @@ const testimonialsList = [
 ]
 
 const logosList = [
-  { src: '/img/logoipsum.svg', alt: 'Logo 1' },
-	{ src: '/img/logoipsum.svg', alt: 'Logo 1' },
-	{ src: '/img/logoipsum.svg', alt: 'Logo 1' },
-	{ src: '/img/logoipsum.svg', alt: 'Logo 1' },
-	{ src: '/img/logoipsum.svg', alt: 'Logo 1' },
-	{ src: '/img/logoipsum.svg', alt: 'Logo 1' },
-	{ src: '/img/logoipsum.svg', alt: 'Logo 1' },
-	{ src: '/img/logoipsum.svg', alt: 'Logo 1' },
-	{ src: '/img/logoipsum.svg', alt: 'Logo 1' },
-	{ src: '/img/logoipsum.svg', alt: 'Logo 1' },
-	{ src: '/img/logoipsum.svg', alt: 'Logo 1' },
-	{ src: '/img/logoipsum.svg', alt: 'Logo 1' },
+	{ name: 'Privacy Bee' },
+	{ name: 'Integrate' },
+	{ name: 'AppsFlyer' },
+	{ name: 'Duel' },
+	{ name: 'LiftLog' },
+	{ name: 'Sevencube' },
+	{ name: 'Swapchain' },
+	{ name: 'ReadyCloud' },
 ]
 </script>
 

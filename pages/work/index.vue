@@ -8,8 +8,37 @@
 				<p class="lead">Crafting impactful designs and experiences that bring ideas to life.</p>
 				<hr class="page-divider-short" />
 
+				<div class="case-study-grid">
+					<CaseStudyPreview
+						title="Privacy Bee"
+						role="Lead Design System Engineer"
+						excerpt="A token-driven component system and automated Figma-to-code pipeline that unified a fragmented frontend."
+						route="/case/nectar"
+					/>
+					<CaseStudyPreview
+						title="Integrate"
+						role="Senior Product Designer"
+						excerpt="Refactoring a Material Design fork into a high-density UI ecosystem built for enterprise lead management and complex data workflows."
+						route="/case/integrate"
+					/>
+				</div>
+
+				<hr class="page-divider" />
+
 				<div class="project-grid">
-					<ProjectPreview title="Privace Bee" description="User Interface Design" image="/img/preview_privacybee.png" route="/case/privacybee" />
+					<ProjectPreview title="Pulse" description="Product Design" image="/img/preview_u1.png" route="/case/pulse" />
+					<ProjectPreview
+						title="Bento Cards"
+						description="Product Design"
+						image="/img/preview_cards2.png"
+						full-image="/img/full_cards2.png"
+					/>
+					<ProjectPreview
+						title="AI Bento Cards"
+						description="Graphic Design"
+						image="/img/preview_cards.png"
+						full-image="/img/full_cards.png"
+					/>
 					<ProjectPreview title="Buzz" description="Mobile User Interface Design" image="/img/preview_buzz.png" route="/case/buzz" />
 					<ProjectPreview title="Duel" description="Website Design" image="/img/preview_duel.png" route="/case/duel" />
 					<ProjectPreview title="Swapchain" description="User Interface Design" image="/img/preview_swapchain.png" route="/case/swapchain" />
@@ -30,6 +59,11 @@
 </script>
 
 <style>
+	.case-study-grid {
+		@apply grid grid-cols-1 gap-6;
+		@apply lg:grid-cols-2 lg:gap-8;
+	}
+
 	.project-grid {
 		@apply grid grid-cols-1 gap-8;
 	}

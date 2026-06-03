@@ -90,7 +90,7 @@
     <label for="other">Other</label>
   </div> -->
 
-  <button :disabled="loading" type="submit">
+  <button class="submit-button" :disabled="loading" type="submit">
     {{ loading ? 'Sending...' : 'Send message' }}
   </button>
 </form>
@@ -208,8 +208,43 @@ textarea:focus {
   @apply border-zinc-700 ring-0 outline-none;
 }
 
-button {
-  @apply w-full mt-2 py-2 bg-ps-blue-100 text-white text-sm font-medium rounded-[4px];
-	@apply hover:bg-ps-blue-100/90 transition-all duration-100;
+.submit-button {
+	@apply relative w-full mt-2 py-2.5 bg-zinc-950 text-zinc-50 text-sm font-medium rounded-[4px];
+	@apply border border-zinc-800 cursor-pointer;
+	@apply transition-colors duration-200;
+	animation: submitButtonGlow 3s ease-in-out infinite;
+}
+
+.submit-button:hover:not(:disabled) {
+	@apply border-ps-blue-100/40 text-white;
+}
+
+.submit-button:disabled {
+	@apply opacity-60 cursor-not-allowed;
+	animation: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.submit-button {
+		animation: none;
+		@apply shadow-[0_0_0_1px_rgba(0,71,255,0.2)];
+	}
+}
+
+@keyframes submitButtonGlow {
+	0%, 100% {
+		box-shadow:
+			0 0 0 1px rgba(0, 71, 255, 0.08),
+			0 0 12px rgba(0, 71, 255, 0.08);
+		border-color: rgba(63, 63, 70, 1);
+	}
+
+	50% {
+		box-shadow:
+			0 0 0 1px rgba(0, 71, 255, 0.35),
+			0 0 28px rgba(0, 71, 255, 0.22),
+			inset 0 0 16px rgba(0, 71, 255, 0.06);
+		border-color: rgba(0, 71, 255, 0.35);
+	}
 }
 </style>

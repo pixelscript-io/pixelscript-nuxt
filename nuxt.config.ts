@@ -64,6 +64,7 @@ export default defineNuxtConfig({
   },
   modules: [
     '@nuxtjs/tailwindcss',
+    'motion-v/nuxt',
     'nuxt-mail',
     'nuxt-gtag'
   ],

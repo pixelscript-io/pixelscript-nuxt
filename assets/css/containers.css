@@ -16,3 +16,21 @@
 	@apply absolute inset-0 h-[440px] [mask-image:linear-gradient(to_bottom,_#ffffffad,_transparent)] pointer-events-none;
 	background-image: url('/img/circuit.svg');
 }
+
+.glass-card {
+	@apply relative p-6 pb-2;
+	@apply border border-white/10 ring-0 ring-white/10;
+	@apply bg-white/[0.01] backdrop-blur-xl;
+}
+
+.glass-card::before {
+	content: '';
+	@apply pointer-events-none absolute inset-0;
+	background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0));
+	opacity: 0.3;
+}
+
+.glass-card > * {
+	position: relative;
+	z-index: 1;
+}

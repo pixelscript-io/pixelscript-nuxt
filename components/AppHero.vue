@@ -20,28 +20,36 @@
 			</div>
 
 			<div id="bg-gradient">
-				<div id="text-container">
-					<!-- <img src="/img/headshot_sm.png" alt="Headshot" /> -->
-					<p class="hero-heading">
-						Hi, I'm Joe and I
-						<svg
-							aria-hidden="true"
-							viewBox="0 0 24 24"
-							class="hero-heart inline-block align-[-0.12em] mx-1 h-[1em] w-[1em] text-ps-blue-100"
-							fill="currentColor"
-						>
-							<path
-								d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
-							/>
-						</svg>
-						CSS
-					</p>
-					<p class="hero-subheading">
-						I'm a Design System Engineer bridging the gap between pixel-perfect design systems and scalable frontend code.</p>
-					<hr class="hero-divider" />
-					<p class="hero-text">
+				<div
+					id="text-container"
+					:class="{ 'is-ready': isReady }"
+					:key="animationKey"
+				>
+					<motion.p
+						class="hero-heading"
+						v-bind="fadeProps(fadeTimings.heading)"
+					>
+						Hi, I'm Joe<HeroTypewriter :delay-ms="typewriterDelayMs" />
+					</motion.p>
+
+					<motion.p
+						class="hero-subheading"
+						v-bind="fadeProps(fadeTimings.subheading)"
+					>
+						I'm a Design System Engineer bridging the gap between pixel-perfect design systems and scalable frontend code.
+					</motion.p>
+
+					<motion.hr
+						class="hero-divider"
+						v-bind="dividerProps(fadeTimings.divider)"
+					/>
+
+					<motion.p
+						class="hero-text"
+						v-bind="fadeProps(fadeTimings.text)"
+					>
 						PixelScript is my little personal laboratory where I experiment by combining pixels with code.
-					</p>
+					</motion.p>
 				</div>
 			</div>
 		</div>
@@ -49,12 +57,85 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { motion } from 'motion-v'
+import { onMounted, ref } from 'vue'
 import CircuitSpotlight from './CircuitSpotlight.vue'
 import GridPulseCanvas from './GridPulseCanvas.client.vue'
 
 const heroWrapper = ref(null)
 const spotlightRef = ref(null)
+const prefersReducedMotion = ref(false)
+const isReady = ref(false)
+const animationKey = ref(0)
+
+const fadeEase = [0.22, 1, 0.36, 1]
+
+const fadeTimings = {
+	heading: 0.25,
+	subheading: 0.75,
+	divider: 1.4,
+	text: 2.05,
+	duration: 0.55,
+	dividerDuration: 0.45,
+}
+
+const typewriterDelayMs = (fadeTimings.text + fadeTimings.duration) * 1000 + 100
+
+const fadeProps = (delay) => {
+	if (!isReady.value) {
+		return {
+			initial: { opacity: 0, y: 10 },
+			animate: { opacity: 0, y: 10 },
+		}
+	}
+
+	if (!animationKey.value || prefersReducedMotion.value) {
+		return {
+			initial: false,
+			animate: { opacity: 1, y: 0 },
+		}
+	}
+
+	return {
+		initial: { opacity: 0, y: 10 },
+		animate: { opacity: 1, y: 0 },
+		transition: { duration: fadeTimings.duration, delay, ease: fadeEase },
+	}
+}
+
+const dividerProps = (delay) => {
+	if (!isReady.value) {
+		return {
+			initial: { opacity: 0, scaleX: 0 },
+			animate: { opacity: 0, scaleX: 0 },
+			style: { transformOrigin: 'left center' },
+		}
+	}
+
+	if (!animationKey.value || prefersReducedMotion.value) {
+		return {
+			initial: false,
+			animate: { opacity: 1, scaleX: 1 },
+		}
+	}
+
+	return {
+		initial: { opacity: 0, scaleX: 0 },
+		animate: { opacity: 1, scaleX: 1 },
+		transition: { duration: fadeTimings.dividerDuration, delay, ease: fadeEase },
+		style: { transformOrigin: 'left center' },
+	}
+}
+
+onMounted(() => {
+	prefersReducedMotion.value = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+	if (!prefersReducedMotion.value) {
+		animationKey.value = 1
+	}
+
+	isReady.value = true
+})
 
 const updateSpotlight = (event) => {
 	spotlightRef.value?.updateSpotlight(event)
@@ -100,6 +181,11 @@ const onSpotlightMove = ({ x, y }) => {
 		@apply w-full px-6;
 		@apply lg:w-[768px] lg:px-0 mx-auto;
 		@apply text-white;
+		@apply opacity-0 invisible;
+	}
+
+	#text-container.is-ready {
+		@apply opacity-100 visible;
 	}
 
 	#text-container p {
@@ -125,35 +211,5 @@ const onSpotlightMove = ({ x, y }) => {
 
 	.hero-text {
 		@apply text-sm text-zinc-300 leading-6;
-	}
-
-	.hero-heart {
-		transform-origin: center;
-		will-change: transform;
-	}
-
-	.hero-heart:hover {
-		animation: heroHeartSpinPulse 520ms cubic-bezier(0.2, 0.9, 0.2, 1) both;
-	}
-
-	@media (prefers-reduced-motion: reduce) {
-		.hero-heart:hover {
-			animation: none;
-		}
-	}
-
-	@keyframes heroHeartSpinPulse {
-		0% {
-			transform: rotate(0deg) scale(1);
-		}
-		60% {
-			transform: rotate(360deg) scale(1);
-		}
-		78% {
-			transform: rotate(360deg) scale(1.18);
-		}
-		100% {
-			transform: rotate(360deg) scale(1);
-		}
 	}
 </style>
