@@ -18,15 +18,15 @@ withDefaults(defineProps<Props>(), {
 <style scoped>
 	@keyframes ripple {
 		0% {
-			box-shadow: 0 0 0 0 rgba(161, 161, 170, 0.4);
+			box-shadow: 0 0 0 0 rgb(var(--ps-color-neutral-400-rgb) / 0.4);
 			transform: rotate(45deg) scale(1);
 		}
 		70% {
-			box-shadow: 0 0 0 4px rgba(161, 161, 170, 0);
+			box-shadow: 0 0 0 4px rgb(var(--ps-color-neutral-400-rgb) / 0);
 			transform: rotate(45deg) scale(1.05);
 		}
 		100% {
-			box-shadow: 0 0 0 0 rgba(161, 161, 170, 0);
+			box-shadow: 0 0 0 0 rgb(var(--ps-color-neutral-400-rgb) / 0);
 			transform: rotate(45deg) scale(1);
 		}
 	}

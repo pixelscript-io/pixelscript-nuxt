@@ -12,21 +12,13 @@
   </div>
 </template>
 
-<script setup>
-import { ref, defineProps } from 'vue'
+<script setup lang="ts">
+import { ref } from 'vue'
 
-const props = defineProps({
-  image: {
-    type: String,
-    required: true,
-    default: ''
-  },
-  fullImage: {
-    type: String,
-    required: true,
-    default: ''
-  }
-})
+defineProps<{
+  image: string
+  fullImage: string
+}>()
 
 const showModal = ref(false)
 
@@ -64,7 +56,6 @@ const closeFull = () => {
   @apply rounded-sm;
 }
 
-/* Vue 3 Transition Classes */
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;

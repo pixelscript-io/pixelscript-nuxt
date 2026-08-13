@@ -62,11 +62,11 @@ defineProps<{
 	@apply absolute top-0 left-0 h-full w-full;
 	background: linear-gradient(
 		90deg,
-		rgba(0, 71, 255, 0) 0%,
-		rgba(0, 71, 255, 0) 35%,
-		rgba(69, 137, 255, 0.9) 50%,
-		rgba(0, 71, 255, 0) 65%,
-		rgba(0, 71, 255, 0) 100%
+		rgb(var(--ps-color-accent-glow-rgb) / 0) 0%,
+		rgb(var(--ps-color-accent-glow-rgb) / 0) 35%,
+		rgb(var(--ps-color-accent-rgb) / 0.9) 50%,
+		rgb(var(--ps-color-accent-glow-rgb) / 0) 65%,
+		rgb(var(--ps-color-accent-glow-rgb) / 0) 100%
 	);
 }
 </style>

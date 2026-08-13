@@ -7,7 +7,6 @@
   will-change: fill;
 }
 
-/* Define animations for each square */
 .logo-icon:hover path:nth-child(1) {
   animation: colorSwap1 4s infinite;
 }
@@ -59,71 +58,71 @@
 
 /* Color swap animations */
 @keyframes colorSwap1 {
-  0%, 100% { fill: #0F62FE; }
-  25% { fill: #0043CE; }
-  50% { fill: #4589FF; }
-  75% { fill: #78A9FF; }
+  0%, 100% { fill: var(--ps-color-ramp-blue-7); }
+  25% { fill: var(--ps-color-ramp-blue-10); }
+  50% { fill: var(--ps-color-ramp-blue-4); }
+  75% { fill: var(--ps-color-ramp-blue-3); }
 }
 
 @keyframes colorSwap2 {
-  0%, 100% { fill: #0043CE; }
-  25% { fill: #4589FF; }
-  50% { fill: #78A9FF; }
-  75% { fill: #A6C8FF; }
+  0%, 100% { fill: var(--ps-color-ramp-blue-10); }
+  25% { fill: var(--ps-color-ramp-blue-4); }
+  50% { fill: var(--ps-color-ramp-blue-3); }
+  75% { fill: var(--ps-color-ramp-blue-1); }
 }
 
 @keyframes colorSwap3 {
-  0%, 100% { fill: #4589FF; }
-  25% { fill: #78A9FF; }
-  50% { fill: #A6C8FF; }
-  75% { fill: #33B1FF; }
+  0%, 100% { fill: var(--ps-color-ramp-blue-4); }
+  25% { fill: var(--ps-color-ramp-blue-3); }
+  50% { fill: var(--ps-color-ramp-blue-1); }
+  75% { fill: var(--ps-color-ramp-blue-5); }
 }
 
 @keyframes colorSwap4 {
-  0%, 100% { fill: #78A9FF; }
-  25% { fill: #A6C8FF; }
-  50% { fill: #33B1FF; }
-  75% { fill: #82CFFF; }
+  0%, 100% { fill: var(--ps-color-ramp-blue-3); }
+  25% { fill: var(--ps-color-ramp-blue-1); }
+  50% { fill: var(--ps-color-ramp-blue-5); }
+  75% { fill: var(--ps-color-ramp-blue-2); }
 }
 
 @keyframes colorSwap5 {
-  0%, 100% { fill: #A6C8FF; }
-  25% { fill: #33B1FF; }
-  50% { fill: #82CFFF; }
-  75% { fill: #1192E8; }
+  0%, 100% { fill: var(--ps-color-ramp-blue-1); }
+  25% { fill: var(--ps-color-ramp-blue-5); }
+  50% { fill: var(--ps-color-ramp-blue-2); }
+  75% { fill: var(--ps-color-ramp-blue-6); }
 }
 
 @keyframes colorSwap6 {
-  0%, 100% { fill: #33B1FF; }
-  25% { fill: #82CFFF; }
-  50% { fill: #1192E8; }
-  75% { fill: #0072C3; }
+  0%, 100% { fill: var(--ps-color-ramp-blue-5); }
+  25% { fill: var(--ps-color-ramp-blue-2); }
+  50% { fill: var(--ps-color-ramp-blue-6); }
+  75% { fill: var(--ps-color-ramp-blue-8); }
 }
 
 @keyframes colorSwap7 {
-  0%, 100% { fill: #82CFFF; }
-  25% { fill: #1192E8; }
-  50% { fill: #0072C3; }
-  75% { fill: #00539A; }
+  0%, 100% { fill: var(--ps-color-ramp-blue-2); }
+  25% { fill: var(--ps-color-ramp-blue-6); }
+  50% { fill: var(--ps-color-ramp-blue-8); }
+  75% { fill: var(--ps-color-ramp-blue-9); }
 }
 
 @keyframes colorSwap8 {
-  0%, 100% { fill: #1192E8; }
-  25% { fill: #0072C3; }
-  50% { fill: #00539A; }
-  75% { fill: #0F62FE; }
+  0%, 100% { fill: var(--ps-color-ramp-blue-6); }
+  25% { fill: var(--ps-color-ramp-blue-8); }
+  50% { fill: var(--ps-color-ramp-blue-9); }
+  75% { fill: var(--ps-color-ramp-blue-7); }
 }
 
 @keyframes colorSwap9 {
-  0%, 100% { fill: #0072C3; }
-  25% { fill: #00539A; }
-  50% { fill: #0F62FE; }
-  75% { fill: #0043CE; }
+  0%, 100% { fill: var(--ps-color-ramp-blue-8); }
+  25% { fill: var(--ps-color-ramp-blue-9); }
+  50% { fill: var(--ps-color-ramp-blue-7); }
+  75% { fill: var(--ps-color-ramp-blue-10); }
 }
 
 @keyframes colorSwap10 {
-  0%, 100% { fill: #00539A; }
-  25% { fill: #0F62FE; }
-  50% { fill: #0043CE; }
-  75% { fill: #4589FF; }
+  0%, 100% { fill: var(--ps-color-ramp-blue-9); }
+  25% { fill: var(--ps-color-ramp-blue-7); }
+  50% { fill: var(--ps-color-ramp-blue-10); }
+  75% { fill: var(--ps-color-ramp-blue-4); }
 }

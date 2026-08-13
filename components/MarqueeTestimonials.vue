@@ -26,19 +26,18 @@
   </div>
 </template>
 
-<script setup>
-import { computed, defineProps } from 'vue'
+<script setup lang="ts">
+import { computed } from 'vue'
 
-// Define props
-const props = defineProps({
-  testimonials: {
-    type: Array,
-    required: true,
-    default: () => []
-  },
-})
+interface MarqueeTestimonial {
+  text: string
+  author: string
+}
 
-// Create a duplicated testimonials array for seamless scrolling
+const props = defineProps<{
+  testimonials: MarqueeTestimonial[]
+}>()
+
 const duplicatedTestimonials = computed(() => {
   return [...props.testimonials, ...props.testimonials]
 })
@@ -48,7 +47,6 @@ const duplicatedTestimonials = computed(() => {
 .marquee {
   @apply w-full overflow-hidden bg-transparent py-6 relative;
 
-  /* Apply mask-image for fade effect */
   -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
   mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
@@ -61,9 +59,9 @@ const duplicatedTestimonials = computed(() => {
 
 .testimonial {
   @apply bg-zinc-950 p-6 rounded-sm border border-zinc-900 overflow-hidden relative;
-  flex: 0 0 auto; /* Prevent flex items from shrinking or growing */
-  width: var(--testimonial-width, 300px); /* Set a fixed width for testimonials */
-  margin-right: var(--testimonial-margin, 50px); /* Space between testimonials */
+  flex: 0 0 auto;
+  width: var(--testimonial-width, 300px);
+  margin-right: var(--testimonial-margin, 50px);
 }
 
 .testimonial-text {
@@ -86,7 +84,6 @@ const duplicatedTestimonials = computed(() => {
   @apply pointer-events-none absolute inset-0 h-full w-full fill-ps-blue-50/25 stroke-ps-blue-50/25 [mask-image:linear-gradient(to_bottom,_#ffffffad,_transparent)] opacity-[.30];
 }
 
-/* Keyframes for scrolling animation */
 @keyframes scroll {
   0% {
     transform: translateX(0);
@@ -96,7 +93,6 @@ const duplicatedTestimonials = computed(() => {
   }
 }
 
-/* Responsive Adjustments */
 @media (max-width: 768px) {
   .testimonial {
     width: 250px;
@@ -111,16 +107,13 @@ const duplicatedTestimonials = computed(() => {
   }
 }
 
-/* CSS Variables for customization */
 .marquee-content {
   --animation-duration: 90s;
   --testimonial-width: 560px;
   --testimonial-margin: 24px;
-  /* Calculate total testimonials for dynamic width */
-  --total-testimonials: 5; /* Update this based on your testimonials count */
+  --total-testimonials: 5;
 }
 
-/* Pause animation on hover */
 .marquee:hover .marquee-content {
   animation-play-state: paused;
 }

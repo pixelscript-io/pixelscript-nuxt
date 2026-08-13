@@ -40,7 +40,7 @@ defineProps<{
 
 .flow-node-circle {
 	@apply w-10 h-10 rounded-full border-2 border-ps-blue-100 bg-zinc-950;
-	box-shadow: 0 0 16px rgba(69, 137, 255, 0.12);
+	box-shadow: 0 0 16px rgb(var(--ps-color-accent-rgb) / 0.12);
 }
 
 .flow-node-label {

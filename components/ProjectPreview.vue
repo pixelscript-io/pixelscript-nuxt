@@ -25,29 +25,20 @@
 	</div>
 </template>
 
-<script setup>
-const props = defineProps({
-	title: {
-		type: String,
-		required: true,
-	},
-	description: {
-		type: String,
-		required: true,
-	},
-	image: {
-		type: String,
-		required: true,
-	},
-	route: {
-		type: String,
-		default: '',
-	},
-	fullImage: {
-		type: String,
-		default: '',
-	},
-})
+<script setup lang="ts">
+const props = withDefaults(
+	defineProps<{
+		title: string
+		description: string
+		image: string
+		route?: string
+		fullImage?: string
+	}>(),
+	{
+		route: '',
+		fullImage: '',
+	}
+)
 
 const router = useRouter()
 const showModal = ref(false)

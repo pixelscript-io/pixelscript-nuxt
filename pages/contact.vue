@@ -128,7 +128,6 @@ const loading = ref(false);
 const handleSubmit = () => {
   const { firstName, lastName, email, message } = formData;
 
-  // Ensure required fields are filled
   if (!firstName || !lastName || !email || !message) {
     alert('Please fill out all required fields.');
     return;
@@ -197,7 +196,6 @@ textarea {
   @apply w-full mt-1 px-3 py-2 border bg-zinc-950 border-zinc-900 rounded-[4px] text-zinc-100;
 }
 
-/* Placeholder */
 input::placeholder,
 textarea::placeholder {
   @apply text-zinc-800;
@@ -227,24 +225,24 @@ textarea:focus {
 @media (prefers-reduced-motion: reduce) {
 	.submit-button {
 		animation: none;
-		@apply shadow-[0_0_0_1px_rgba(0,71,255,0.2)];
+		box-shadow: 0 0 0 1px rgb(var(--ps-color-accent-glow-rgb) / 0.2);
 	}
 }
 
 @keyframes submitButtonGlow {
 	0%, 100% {
 		box-shadow:
-			0 0 0 1px rgba(0, 71, 255, 0.08),
-			0 0 12px rgba(0, 71, 255, 0.08);
-		border-color: rgba(63, 63, 70, 1);
+			0 0 0 1px var(--ps-color-glow-soft),
+			0 0 12px var(--ps-color-glow-soft);
+		border-color: var(--ps-color-neutral-700);
 	}
 
 	50% {
 		box-shadow:
-			0 0 0 1px rgba(0, 71, 255, 0.35),
-			0 0 28px rgba(0, 71, 255, 0.22),
-			inset 0 0 16px rgba(0, 71, 255, 0.06);
-		border-color: rgba(0, 71, 255, 0.35);
+			0 0 0 1px var(--ps-color-glow-strong),
+			0 0 28px rgb(var(--ps-color-accent-glow-rgb) / 0.22),
+			inset 0 0 16px rgb(var(--ps-color-accent-glow-rgb) / 0.06);
+		border-color: var(--ps-color-glow-strong);
 	}
 }
 </style>

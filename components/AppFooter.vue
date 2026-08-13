@@ -28,14 +28,14 @@
 	</footer>
 </template>
 
-<script setup>
+<script setup lang="ts">
 	const router = useRouter()
 
-	const goTo = (route) => {
+	const goTo = (route: string) => {
 		router.push(route)
 	}
 
-	const goToSite = (site) => {
+	const goToSite = (site: string) => {
 		window.open(site, '_blank')
 	}
 

@@ -245,7 +245,7 @@ const logosList = [
 
 	.company-row .job-year {
 		@apply text-sm text-zinc-200;
-		font-family: "Source Code Pro", monospace;
+		font-family: var(--ps-font-mono);
 	}
 
 	.year-container {

@@ -1,50 +1,49 @@
 <template>
 	<div class="circuit-container" ref="containerRef">
 		<div class="circuit-base"></div>
-		<div 
-			class="circuit-highlight" 
+		<div
+			class="circuit-highlight"
 			:style="spotlightStyle"
 		>
 		</div>
 	</div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, computed, onUnmounted } from 'vue'
 
-const emit = defineEmits(['spotlight-move'])
-const containerRef = ref(null)
-const mouseX = ref(0)
-const mouseY = ref(0)
-const isHovering = ref(false)
-let rafId = null
+const emit = defineEmits<{
+	(e: 'spotlight-move', payload: { x: number; y: number }): void
+}>()
+const containerRef = ref<HTMLElement | null>(null)
+const mouseX = ref<number | null>(0)
+const mouseY = ref<number | null>(0)
+const isHovering = ref<boolean | null>(false)
+let rafId: number | null = null
 
-const updateSpotlightPosition = (event) => {
+const updateSpotlightPosition = (event: MouseEvent) => {
 	if (!containerRef.value) return
-	
-	// Cancel any pending animation frame
+
 	if (rafId) {
 		cancelAnimationFrame(rafId)
 	}
 
-	// Schedule the update on the next animation frame
-	rafId = requestAnimationFrame(() => {
-		const rect = containerRef.value.getBoundingClientRect()
-		mouseX.value = event.clientX - rect.left
-		mouseY.value = event.clientY - rect.top
-		isHovering.value = true
-		emit('spotlight-move', { x: mouseX.value, y: mouseY.value })
-	})
+  rafId = requestAnimationFrame(() => {
+    if (!containerRef.value) return
+	const rect = containerRef.value.getBoundingClientRect()
+	mouseX.value = event.clientX - rect.left
+	mouseY.value = event.clientY - rect.top
+	isHovering.value = true
+	emit('spotlight-move', { x: mouseX.value, y: mouseY.value })
+  })
 }
 
-// Cleanup on component unmount
 onUnmounted(() => {
 	if (rafId) {
 		cancelAnimationFrame(rafId)
 	}
 })
 
-// Expose methods for parent component
 defineExpose({
 	updateSpotlight: updateSpotlightPosition,
 	hideSpotlight: () => {
@@ -77,8 +76,8 @@ const spotlightStyle = computed(() => ({
 	pointer-events: none;
 	z-index: 0;
 	background-image:
-		linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-		linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+		linear-gradient(var(--ps-color-grid-line) 1px, transparent 1px),
+		linear-gradient(90deg, var(--ps-color-grid-line) 1px, transparent 1px);
 	background-size: 32px 32px;
 }
 
@@ -104,4 +103,4 @@ const spotlightStyle = computed(() => ({
 	);
 	will-change: mask-image, -webkit-mask-image;
 }
-</style> 
+</style>

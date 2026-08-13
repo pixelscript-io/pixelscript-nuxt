@@ -1,0 +1,144 @@
+/**
+ * - Naming: --ps-{category}-{name}[-{variant}]
+ * - Categories: color, font, text, leading, space, radius, border,
+ *   shadow, blur, z, duration, ease, container
+ */
+
+:root {
+	/* Color */
+	--ps-color-accent-soft: #A6C8FF;
+	--ps-color-accent: #4589FF;
+	--ps-color-accent-glow: #0047FF;
+
+	/* RGB variants */
+	--ps-color-accent-soft-rgb: 166 200 255;
+	--ps-color-accent-rgb: 69 137 255;
+	--ps-color-accent-glow-rgb: 0 71 255;
+
+	/* Color — Neutrals */
+	--ps-color-neutral-50: #fafafa;
+	--ps-color-neutral-100: #f4f4f5;
+	--ps-color-neutral-200: #e4e4e7;
+	--ps-color-neutral-300: #d4d4d8;
+	--ps-color-neutral-400: #a1a1aa;
+	--ps-color-neutral-500: #71717a;
+	--ps-color-neutral-600: #52525b;
+	--ps-color-neutral-700: #3f3f46;
+	--ps-color-neutral-800: #27272a;
+	--ps-color-neutral-900: #18181b;
+	--ps-color-neutral-950: #09090b;
+
+	/* RGB variants */
+	--ps-color-neutral-50-rgb: 250 250 250;
+	--ps-color-neutral-100-rgb: 244 244 245;
+	--ps-color-neutral-200-rgb: 228 228 231;
+	--ps-color-neutral-300-rgb: 212 212 216;
+	--ps-color-neutral-400-rgb: 161 161 170;
+	--ps-color-neutral-500-rgb: 113 113 122;
+	--ps-color-neutral-600-rgb: 82 82 91;
+	--ps-color-neutral-700-rgb: 63 63 70;
+	--ps-color-neutral-800-rgb: 39 39 42;
+	--ps-color-neutral-900-rgb: 24 24 27;
+	--ps-color-neutral-950-rgb: 9 9 11;
+
+	/* Semantic aliases */
+	--ps-color-bg-page: #000000;
+	--ps-color-bg-surface: var(--ps-color-neutral-950);
+	--ps-color-text-heading: var(--ps-color-accent-soft);
+	--ps-color-text-body: var(--ps-color-neutral-300);
+	--ps-color-text-muted: var(--ps-color-neutral-500);
+	--ps-color-border: var(--ps-color-neutral-800);
+	--ps-color-border-hover: var(--ps-color-neutral-700);
+
+	/* Color — Logo animation */
+	--ps-color-ramp-blue-1: #A6C8FF;
+	--ps-color-ramp-blue-2: #82CFFF;
+	--ps-color-ramp-blue-3: #78A9FF;
+	--ps-color-ramp-blue-4: #4589FF;
+	--ps-color-ramp-blue-5: #33B1FF;
+	--ps-color-ramp-blue-6: #1192E8;
+	--ps-color-ramp-blue-7: #0F62FE;
+	--ps-color-ramp-blue-8: #0072C3;
+	--ps-color-ramp-blue-9: #00539A;
+	--ps-color-ramp-blue-10: #0043CE;
+
+	/* Color — Overlays */
+	--ps-color-overlay-modal: rgba(0, 0, 0, 0.5);
+	--ps-color-glass-bg: rgba(255, 255, 255, 0.01);
+	--ps-color-glass-border: rgba(255, 255, 255, 0.1);
+	--ps-color-glass-sheen: rgba(255, 255, 255, 0.12);
+	--ps-color-glow-strong: rgba(0, 71, 255, 0.35);
+	--ps-color-glow-soft: rgba(0, 71, 255, 0.08);
+	--ps-color-grid-line: rgba(255, 255, 255, 0.02);
+
+	/* Typography */
+	--ps-font-sans: "Inter", sans-serif;
+	--ps-font-mono: "Source Code Pro", monospace;
+
+	--ps-text-xs: 0.75rem;
+	--ps-text-sm: 0.875rem;
+	--ps-text-base: 1rem;
+	--ps-text-lg: 1.125rem;
+	--ps-text-xl: 1.25rem;
+	--ps-text-2xl: 1.5rem;
+
+	--ps-font-weight-medium: 500;
+	--ps-font-weight-semibold: 600;
+	--ps-font-weight-bold: 700;
+
+	--ps-leading-relaxed: 1.5rem;
+
+	/* Spacing */
+	--ps-space-1: 0.25rem;
+	--ps-space-2: 0.5rem;
+	--ps-space-3: 0.75rem;
+	--ps-space-4: 1rem;
+	--ps-space-6: 1.5rem;
+	--ps-space-8: 2rem;
+	--ps-space-10: 2.5rem;
+	--ps-space-12: 3rem;
+	--ps-space-20: 5rem;
+
+	/* Containers */
+	--ps-container-page: 1024px;
+	--ps-container-content: 768px;
+	--ps-breakpoint-lg: 1024px;
+
+	/* Borders */
+	--ps-radius-sm: 0.125rem;
+	--ps-radius-md: 0.375rem;
+	--ps-radius-full: 9999px;
+
+	--ps-border-width: 1px;
+	--ps-border-style-rail: dashed;
+
+	/* Effects */
+	--ps-blur-glass: 24px;
+	--ps-mask-fade-bottom: linear-gradient(to bottom, #ffffffad, transparent);
+
+	/* Motion */
+	--ps-duration-fast: 0.15s;
+	--ps-duration-normal: 0.2s;
+	--ps-duration-slow: 0.3s;
+	--ps-duration-glacial: 0.8s;
+
+	--ps-ease-default: ease;
+	--ps-ease-in-out: ease-in-out;
+	--ps-ease-ripple: cubic-bezier(0.4, 0, 0.2, 1);
+	--ps-ease-spring: cubic-bezier(0.2, 0.9, 0.2, 1);
+	--ps-ease-hero: cubic-bezier(0.22, 1, 0.36, 1);
+
+	--ps-motion-hero-heading-delay: 0.25s;
+	--ps-motion-hero-subheading-delay: 0.75s;
+	--ps-motion-hero-divider-delay: 1.4s;
+	--ps-motion-hero-text-delay: 2.05s;
+	--ps-motion-hero-fade-duration: 0.55s;
+
+	/* Z-index */
+	--ps-z-base: 0;
+	--ps-z-raised: 10;
+	--ps-z-overlay: 20;
+	--ps-z-header: 50;
+	--ps-z-spotlight: 100;
+	--ps-z-modal: 999;
+}

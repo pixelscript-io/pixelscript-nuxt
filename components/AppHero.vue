@@ -1,18 +1,15 @@
 <template>
 	<div id="hero">
-		<div 
-			id="hero-wrapper" 
-			@mousemove="updateSpotlight" 
-			@mouseleave="hideSpotlight" 
+		<div
+			id="hero-wrapper"
+			@mousemove="updateSpotlight"
+			@mouseleave="hideSpotlight"
 			ref="heroWrapper"
 		>
-			<CircuitSpotlight 
-				ref="spotlightRef"
-				@spotlight-move="onSpotlightMove"
-			/>
+			<CircuitSpotlight ref="spotlightRef" />
 
 			<GridPulseCanvas :intensity="0.3" />
-			
+
 			<AppSquares />
 
 			<div id="headshot">
@@ -56,19 +53,19 @@
 	</div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { motion } from 'motion-v'
 import { onMounted, ref } from 'vue'
 import CircuitSpotlight from './CircuitSpotlight.vue'
 import GridPulseCanvas from './GridPulseCanvas.client.vue'
 
-const heroWrapper = ref(null)
-const spotlightRef = ref(null)
-const prefersReducedMotion = ref(false)
-const isReady = ref(false)
-const animationKey = ref(0)
+const heroWrapper = ref<HTMLElement | null>(null)
+const spotlightRef = ref<InstanceType<typeof CircuitSpotlight> | null>(null)
+const prefersReducedMotion = ref<boolean>(false)
+const isReady = ref<boolean>(false)
+const animationKey = ref<number>(0)
 
-const fadeEase = [0.22, 1, 0.36, 1]
+const fadeEase = [0.22, 1, 0.36, 1] as const
 
 const fadeTimings = {
 	heading: 0.25,
@@ -77,11 +74,11 @@ const fadeTimings = {
 	text: 2.05,
 	duration: 0.55,
 	dividerDuration: 0.45,
-}
+} as const
 
 const typewriterDelayMs = (fadeTimings.text + fadeTimings.duration) * 1000 + 100
 
-const fadeProps = (delay) => {
+const fadeProps = (delay: number) => {
 	if (!isReady.value) {
 		return {
 			initial: { opacity: 0, y: 10 },
@@ -103,7 +100,7 @@ const fadeProps = (delay) => {
 	}
 }
 
-const dividerProps = (delay) => {
+const dividerProps = (delay: number) => {
 	if (!isReady.value) {
 		return {
 			initial: { opacity: 0, scaleX: 0 },
@@ -137,16 +134,12 @@ onMounted(() => {
 	isReady.value = true
 })
 
-const updateSpotlight = (event) => {
+const updateSpotlight = (event: MouseEvent) => {
 	spotlightRef.value?.updateSpotlight(event)
 }
 
 const hideSpotlight = () => {
 	spotlightRef.value?.hideSpotlight()
-}
-
-const onSpotlightMove = ({ x, y }) => {
-	// Handle spotlight movement if needed
 }
 </script>
 

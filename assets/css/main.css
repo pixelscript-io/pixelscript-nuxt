@@ -3,7 +3,7 @@
 :root {
 	-webkit-font-smoothing: auto;
 	-moz-osx-font-smoothing: auto;
-	font-family: "Inter", sans-serif;
+	font-family: var(--ps-font-sans);
 }
 
 .page-divider {

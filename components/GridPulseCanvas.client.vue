@@ -28,6 +28,11 @@ onMounted(() => {
 	const GRID = props.gridSize
 	const clamp01 = (value: number) => Math.min(1, Math.max(0, value))
 	const intensity = clamp01(props.intensity)
+
+	const glowRgb = getComputedStyle(document.documentElement)
+		.getPropertyValue('--ps-color-accent-glow-rgb')
+		.trim()
+		.replace(/\s+/g, ', ') || '0, 71, 255'
 	let animationFrameId = 0
 	let t = 0
 	let width = 0
@@ -86,7 +91,7 @@ onMounted(() => {
 		ctx.clearRect(0, 0, width, height)
 		t += 0.012
 		ctx.shadowBlur = 6 * intensity
-		ctx.shadowColor = `rgba(0,71,255,${0.35 * intensity})`
+		ctx.shadowColor = `rgba(${glowRgb}, ${0.35 * intensity})`
 
 		for (const p of pulses) {
 			const progress = (Math.sin(t * p.speed + p.phase) + 1) / 2
@@ -96,10 +101,10 @@ onMounted(() => {
 				const x = p.idx * GRID
 				const cy = progress * (height + len) - len / 2
 				const grad = ctx.createLinearGradient(x, cy - len / 2, x, cy + len / 2)
-				grad.addColorStop(0, 'rgba(0,71,255,0)')
-				grad.addColorStop(0.2, `rgba(0,71,255,${0.06 * intensity})`)
-				grad.addColorStop(0.5, `rgba(0,71,255,${0.6 * intensity})`)
-				grad.addColorStop(1, 'rgba(0,71,255,0)')
+				grad.addColorStop(0, `rgba(${glowRgb}, 0)`)
+				grad.addColorStop(0.2, `rgba(${glowRgb}, ${0.06 * intensity})`)
+				grad.addColorStop(0.5, `rgba(${glowRgb}, ${0.6 * intensity})`)
+				grad.addColorStop(1, `rgba(${glowRgb}, 0)`)
 				ctx.strokeStyle = grad
 				ctx.lineWidth = 1.25
 				ctx.beginPath()
@@ -110,9 +115,9 @@ onMounted(() => {
 				const y = p.idx * GRID
 				const cx = progress * (width + len) - len / 2
 				const grad = ctx.createLinearGradient(cx - len / 2, y, cx + len / 2, y)
-				grad.addColorStop(0, 'rgba(0,71,255,0)')
-				grad.addColorStop(0.5, `rgba(0,71,255,${0.5 * intensity})`)
-				grad.addColorStop(1, 'rgba(0,71,255,0)')
+				grad.addColorStop(0, `rgba(${glowRgb}, 0)`)
+				grad.addColorStop(0.5, `rgba(${glowRgb}, ${0.5 * intensity})`)
+				grad.addColorStop(1, `rgba(${glowRgb}, 0)`)
 				ctx.strokeStyle = grad
 				ctx.lineWidth = 1.25
 				ctx.beginPath()

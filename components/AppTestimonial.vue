@@ -20,10 +20,12 @@
 	</div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, onMounted, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import GridPulseCanvas from './GridPulseCanvas.client.vue'
+
+type Testimonial = typeof testimonialsList[number];
 
 const testimonialsList = [
 	{
@@ -41,9 +43,9 @@ const testimonialsList = [
 		text: `Joe's ability to create seamless and visually stunning designs has elevated every project we've worked on together.`,
 		author: 'Vardit Jonasz, Product Manager, Integrate',
 	},
-];
+] as const;
 
-const currentTestimonial = ref(null);
+const currentTestimonial = ref<Testimonial | null>(null);
 const route = useRoute();
 
 const updateTestimonial = () => {
@@ -51,12 +53,10 @@ const updateTestimonial = () => {
 	currentTestimonial.value = testimonialsList[randomIndex];
 };
 
-// Update testimonial on route change
 watch(route, () => {
 	updateTestimonial();
 });
 
-// Initialize testimonial on mount
 onMounted(() => {
 	updateTestimonial();
 });
@@ -71,8 +71,8 @@ onMounted(() => {
 		@apply w-[calc(100%-2rem)];
 		@apply lg:w-[1024px] border-x border-dashed border-zinc-800 mx-auto relative bg-gradient-to-t from-ps-blue-50/[.025] to-ps-blue-50/0;
 		background-image:
-			linear-gradient(rgba(0, 71, 255, 0.04) 1px, transparent 1px),
-			linear-gradient(90deg, rgba(0, 71, 255, 0.04) 1px, transparent 1px);
+			linear-gradient(rgb(var(--ps-color-accent-glow-rgb) / 0.04) 1px, transparent 1px),
+			linear-gradient(90deg, rgb(var(--ps-color-accent-glow-rgb) / 0.04) 1px, transparent 1px);
 		background-size: 24px 24px;
 	}
 

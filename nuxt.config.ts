@@ -1,5 +1,3 @@
-import colors from 'tailwindcss/colors'
-
 export default defineNuxtConfig({
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
@@ -54,6 +52,7 @@ export default defineNuxtConfig({
   },
   compatibilityDate: '2024-04-03',
   css: [
+    '~/assets/css/tokens.css',
     '~/assets/css/main.css',
     '~/assets/css/containers.css',
     '~/assets/css/text.css',
@@ -86,9 +85,26 @@ export default defineNuxtConfig({
         extend: {
           colors: {
             'ps-blue': {
-              50: '#A6C8FF',
-              100: '#4589FF',
-            }
+              50: 'rgb(var(--ps-color-accent-soft-rgb) / <alpha-value>)',
+              100: 'rgb(var(--ps-color-accent-rgb) / <alpha-value>)',
+            },
+            zinc: {
+              50: 'rgb(var(--ps-color-neutral-50-rgb) / <alpha-value>)',
+              100: 'rgb(var(--ps-color-neutral-100-rgb) / <alpha-value>)',
+              200: 'rgb(var(--ps-color-neutral-200-rgb) / <alpha-value>)',
+              300: 'rgb(var(--ps-color-neutral-300-rgb) / <alpha-value>)',
+              400: 'rgb(var(--ps-color-neutral-400-rgb) / <alpha-value>)',
+              500: 'rgb(var(--ps-color-neutral-500-rgb) / <alpha-value>)',
+              600: 'rgb(var(--ps-color-neutral-600-rgb) / <alpha-value>)',
+              700: 'rgb(var(--ps-color-neutral-700-rgb) / <alpha-value>)',
+              800: 'rgb(var(--ps-color-neutral-800-rgb) / <alpha-value>)',
+              900: 'rgb(var(--ps-color-neutral-900-rgb) / <alpha-value>)',
+              950: 'rgb(var(--ps-color-neutral-950-rgb) / <alpha-value>)',
+            },
+          },
+          fontFamily: {
+            sans: ['var(--ps-font-sans)'],
+            mono: ['var(--ps-font-mono)'],
           },
         },
       }

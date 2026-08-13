@@ -1,6 +1,6 @@
 <template>
-	<button 
-		class="nav-button group" 
+	<button
+		class="nav-button group"
 		:class="{ active: isActive }"
 		@click="$emit('click')"
 	>
@@ -9,33 +9,37 @@
 	</button>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
-const props = defineProps({
-	label: String,
-	hotkey: String,
-	route: String,
-	footer: Boolean
-})
+const props = defineProps<{
+	label?: string
+	hotkey?: string
+	route?: string
+	footer?: boolean
+}>()
 
 const route = useRoute()
 const router = useRouter()
+
 const isActive = computed(() => route.path === props.route)
 const hotkeyPressed = ref(false)
 
-const handleKeydown = (event) => {
-	if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA') return
-	
-	if (event.key.toLowerCase() === props.hotkey.toLowerCase()) {
+const handleKeydown = (event: KeyboardEvent) => {
+	const target = event.target as HTMLElement | null
+	if (target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA')) return
+
+	if (props.hotkey && event.key.toLowerCase() === props.hotkey.toLowerCase()) {
 		hotkeyPressed.value = true
-		router.push(props.route)
+		if (props.route) {
+			router.push(props.route)
+		}
 	}
 }
 
-const handleKeyup = (event) => {
-	if (event.key.toLowerCase() === props.hotkey.toLowerCase()) {
+const handleKeyup = (event: KeyboardEvent) => {
+	if (props.hotkey && event.key.toLowerCase() === props.hotkey.toLowerCase()) {
 		hotkeyPressed.value = false
 	}
 }
@@ -56,7 +60,6 @@ onBeforeUnmount(() => {
 	@apply h-8 px-2 rounded-sm bg-transparent flex items-center space-x-2;
 }
 
-/* Only show focus styles when using keyboard */
 .nav-button:focus-visible {
 	@apply outline-none ring-2 ring-ps-blue-100;
 }
@@ -78,7 +81,7 @@ onBeforeUnmount(() => {
 	@apply w-5 h-5 bg-transparent border border-zinc-800;
 	@apply rounded-sm items-center justify-center;
 	@apply text-xs text-zinc-500 uppercase font-medium;
-	font-family: "Source Code Pro", monospace;
+	font-family: var(--ps-font-mono);
 	transition: all 0.15s ease;
 }
 
