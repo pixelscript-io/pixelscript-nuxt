@@ -13,7 +13,7 @@ const optionsDelay = fadeTimings.text + 0.35
 
 <template>
   <!-- Fills whatever space is left under the AI notice and header, so their heights don't matter. -->
-  <div class="relative mx-auto flex w-full max-w-[1024px] flex-1 flex-col border-x border-dashed border-zinc-800">
+  <div class="relative mx-auto flex w-[calc(100%-2rem)] flex-1 flex-col border-x lg:w-[1024px] border-dashed border-zinc-800">
     <div class="absolute inset-0 pointer-events-none bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:32px_32px]" />
     <div class="absolute inset-0 pointer-events-none bg-gradient-to-t from-[#A6C8FF]/[0.025] to-transparent" />
     <!-- Blue pulses that travel along the grid lines (same as the old site's hero). Own layer so content stays on top. -->
