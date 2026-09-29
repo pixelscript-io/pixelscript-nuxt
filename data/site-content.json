@@ -1,0 +1,532 @@
+{
+  "$description": "Complete content and copy for pixelscript.io. Source of truth for the AI experience: answers should be composed from this file. All text is verbatim from the site (HTML entities decoded). Fields named 'route' are on-site paths; 'url' fields are absolute.",
+
+  "site": {
+    "name": "PixelScript",
+    "url": "https://pixelscript.io",
+    "title": "PixelScript - Joe Berthelot",
+    "description": "PixelScript is a personal laboratory where pixels meet code. Product Design, User Experience Research and Front End Development.",
+    "ogImage": "/img/og-image.jpg",
+    "owner": "Joe Berthelot",
+    "sameAs": [
+      "https://www.linkedin.com/in/joeberthelot/",
+      "https://github.com/pixelscript-io"
+    ]
+  },
+
+  "person": {
+    "name": "Joe Berthelot",
+    "firstName": "Joe",
+    "jobTitleShort": "Design System Engineer",
+    "jobTitleSchema": "Product Designer & Front End Developer",
+    "headshot": "/img/headshot.png",
+    "yearsOfExperience": "15",
+    "disciplines": ["Product Design", "User Experience Research", "Front End Development", "Design Systems", "Mentorship & Coaching"]
+  },
+
+  "home": {
+    "greeting": "Hi, I'm Joe",
+    "typewriter": {
+      "lead": " and I ",
+      "symbol": "heart",
+      "words": ["CSS", "Vue", "Figma", "Docs", "Git"]
+    },
+    "subheading": "I'm a Design System Engineer bridging the gap between pixel-perfect design systems and scalable frontend code.",
+    "tagline": "PixelScript is my little personal laboratory where I experiment by combining pixels with code.",
+    "aiPrompt": "Ask about me, where I've worked, what I've built, or how to reach me, and I'll bring up just that.",
+    "inputPlaceholder": "e.g. Have you built design systems for enterprise products?",
+    "intro": [
+      "For the past fifteen years, I've architected scalable UI foundations and component systems for companies ranging from agile startups to global enterprises.",
+      "I combine a passion for meticulous visual engineering with modern design tokens and utility-first code to build robust component libraries that accelerate developer velocity."
+    ],
+    "suggestedQuestions": [
+      { "id": "about", "label": "Tell me about yourself", "hotkey": "A" },
+      { "id": "experience", "label": "Where have you worked?", "hotkey": "S" },
+      { "id": "work", "label": "Show me your work", "hotkey": "D" },
+      { "id": "contact", "label": "How can I reach you?", "hotkey": "F" }
+    ]
+  },
+
+  "skills": [
+    {
+      "id": "design-systems",
+      "title": "Design Systems",
+      "text": "Design systems are the foundation of scalable products. I craft systems that align design and development with reusable components and clear documentation.",
+      "tools": [
+        { "name": "Storybook", "img": "/img/logo_storybook.svg" },
+        { "name": "Supernova", "img": "/img/logo_supernova.svg" },
+        { "name": "Style Dictionary", "img": "/img/logo_styledictionary.svg" }
+      ]
+    },
+    {
+      "id": "front-end-development",
+      "title": "Front End Development",
+      "text": "I bring interfaces to life where design meets functionality. Using code and modern frameworks, I create pixel-perfect experiences that users and devs love.",
+      "tools": [
+        { "name": "Visual Studio Code", "img": "/img/logo_vscode.svg" },
+        { "name": "Vue", "img": "/img/logo_vue.svg" },
+        { "name": "CSS", "img": "/img/logo_css.svg" }
+      ]
+    },
+    {
+      "id": "product-design",
+      "title": "Product Design",
+      "text": "Designing products isn't just about aesthetics, it's about crafting experiences. I take ideas from concept to completion, creating intuitive interfaces that connect with users and drive results.",
+      "tools": [
+        { "name": "Figma", "img": "/img/logo_figma.svg" },
+        { "name": "Zeplin", "img": "/img/logo_zeplin.svg" },
+        { "name": "Photoshop", "img": "/img/logo_photoshop.svg" }
+      ]
+    },
+    {
+      "id": "ux-research",
+      "title": "UX Research",
+      "text": "I dive deep into user needs, behaviors, and motivations to inform every decision. By combining research insights with design expertise, I create solutions that feel as seamless as they are thoughtful.",
+      "tools": [
+        { "name": "Airtable", "img": "/img/logo_airtable.svg" },
+        { "name": "Miro", "img": "/img/logo_miro.svg" },
+        { "name": "Segment", "img": "/img/logo_segment.svg" }
+      ]
+    }
+  ],
+
+  "experience": {
+    "route": "/experience",
+    "heading": "Experience",
+    "lead": "Building expertise through impactful roles with industry-leading companies.",
+    "jobs": [
+      { "id": "privacybee", "role": "Lead Design System Engineer", "company": "Privacy Bee", "startYear": "2024", "endYear": "2026", "relatedWork": ["nectar", "privacybee-ui"] },
+      { "id": "duel", "role": "Lead Product Designer", "company": "Duel", "startYear": "2024", "endYear": "2024", "relatedWork": ["duel"] },
+      { "id": "liftlog", "role": "Chief Product Officer", "company": "LiftLog", "startYear": "2023", "endYear": "2024", "relatedWork": ["liftlog"] },
+      { "id": "sevencube", "role": "Sr. UI Engineer", "company": "Sevencube", "startYear": "2022", "endYear": "2024", "relatedWork": [] },
+      { "id": "arfinnmed", "role": "Senior Product Designer", "company": "ArfinnMed", "startYear": "2022", "endYear": "2023", "relatedWork": [] },
+      { "id": "graphicsflow", "role": "Lead Product Designer", "company": "GraphicsFlow", "startYear": "2021", "endYear": "2023", "relatedWork": [] },
+      { "id": "appsflyer", "role": "Product Designer", "company": "AppsFlyer", "startYear": "2019", "endYear": "2020", "relatedWork": [] },
+      { "id": "tallwave", "role": "Senior Product Designer", "company": "Tallwave", "startYear": "2019", "endYear": "2020", "relatedWork": [] },
+      { "id": "californiapools", "role": "Lead Product Designer", "company": "California Pools", "startYear": "2019", "endYear": "2019", "relatedWork": [] },
+      { "id": "swapchain", "role": "Director of UI/UX", "company": "Swapchain", "startYear": "2017", "endYear": "2018", "relatedWork": ["swapchain"] },
+      { "id": "integrate", "role": "Senior Product Designer", "company": "Integrate", "startYear": "2015", "endYear": "2019", "relatedWork": ["integrate"] },
+      { "id": "readycloud", "role": "Creative Director", "company": "ReadyCloud", "startYear": "2013", "endYear": "2015", "relatedWork": [] },
+      { "id": "netshapers", "role": "Lead Web Designer", "company": "NetShapers", "startYear": "2010", "endYear": "2013", "relatedWork": [] }
+    ],
+    "mentorship": {
+      "heading": "Mentorship & Coaching",
+      "text": "I've had the privilege of mentoring designers at all stages of their careers, from aspiring students to seasoned professionals. With over 15 years of experience, I've spoken at design schools, coached more than 100 creatives, and shared my insights through writing and workshops. Whether it's refining skills, navigating challenges, or shaping careers, I'm passionate about helping others succeed in the ever-evolving world of design."
+    }
+  },
+
+  "testimonials": [
+    {
+      "id": "jeff-carterson",
+      "text": "Joe's ability to transform complex ideas into elegant, user-friendly designs is unmatched. Working with him was a game-changer for our project.",
+      "author": "Jeff Carterson, CEO, Sevencube",
+      "name": "Jeff Carterson", "role": "CEO", "company": "Sevencube"
+    },
+    {
+      "id": "michael-lee",
+      "text": "Joe brings a rare combination of technical expertise and creative vision. His insights and designs took our product to the next level.",
+      "author": "Michael Lee, American Express/Tallwave",
+      "name": "Michael Lee", "role": null, "company": "American Express/Tallwave"
+    },
+    {
+      "id": "vardit-jonasz-1",
+      "text": "Working with Joe was an absolute pleasure. His attention to detail and dedication to user-centered design are truly exceptional.",
+      "author": "Vardit Jonasz, Product Manager, Integrate",
+      "name": "Vardit Jonasz", "role": "Product Manager", "company": "Integrate"
+    },
+    {
+      "id": "chris-dunn",
+      "text": "Joe's mentorship has been invaluable for our team. He's not only a skilled designer but also an inspiring coach who helps others grow.",
+      "author": "Chris Dunn, CEO, ReadyCloud",
+      "name": "Chris Dunn", "role": "CEO", "company": "ReadyCloud"
+    },
+    {
+      "id": "rachel-evans",
+      "text": "Joe's innovative approach and commitment to excellence made a significant impact on our product. I couldn't recommend him more highly.",
+      "author": "Rachel Evans, CPO, California Pools & Landscaping",
+      "name": "Rachel Evans", "role": "CPO", "company": "California Pools & Landscaping"
+    },
+    {
+      "id": "kayla-henry",
+      "heading": "Has become one of my favorite collaborators",
+      "text": "I've had the pleasure of working with Joe on a fast-moving project that has greatly benefited from his talents. Joe is an intelligent, creative, team-oriented, and highly conscientious designer, and he has quickly become one of my favorite collaborators.",
+      "author": "Kayla Henry, Product Manager",
+      "name": "Kayla Henry", "role": "Product Manager", "company": null
+    },
+    {
+      "id": "aidan-powers",
+      "heading": "An incredible mentor",
+      "text": "Joe's guidance and expertise have been instrumental in helping me grow as a designer. His mentorship is second to none.",
+      "author": "Aidan Powers, Product Designer, Shopify",
+      "name": "Aidan Powers", "role": "Product Designer", "company": "Shopify"
+    },
+    {
+      "id": "vardit-jonasz-2",
+      "heading": "A design wizard",
+      "text": "Joe's ability to create seamless and visually stunning designs has elevated every project we've worked on together.",
+      "author": "Vardit Jonasz, Product Manager, Integrate",
+      "name": "Vardit Jonasz", "role": "Product Manager", "company": "Integrate"
+    }
+  ],
+
+  "work": {
+    "route": "/work",
+    "heading": "Work",
+    "lead": "Crafting impactful designs and experiences that bring ideas to life.",
+    "featuredOrder": ["nectar"],
+    "projectOrder": ["pulse", "bento", "aibento", "buzz", "duel", "swapchain", "liftlog"]
+  },
+
+  "caseStudies": [
+    {
+      "id": "nectar",
+      "type": "case-study",
+      "route": "/case/nectar",
+      "url": "https://pixelscript.io/case/nectar",
+      "company": "Privacy Bee",
+      "relatedJobId": "privacybee",
+      "title": "Case Study: Building Nectar - Smarter Token Pipelines and Flexible UI Components at Privacy Bee",
+      "cardTitle": "Privacy Bee",
+      "role": "Lead Design System Engineer",
+      "excerpt": "A token-driven component system and automated Figma-to-code pipeline that unified a fragmented frontend.",
+      "previewImage": "/img/preview_case1.png",
+      "metrics": [
+        { "value": "~40%", "label": "Faster handoffs" },
+        { "value": "0%", "label": "Design-to-code drift" },
+        { "value": "High", "label": "Developer adoption" }
+      ],
+      "sections": [
+        {
+          "heading": null,
+          "level": null,
+          "content": [
+            { "type": "paragraph", "text": "As Privacy Bee started growing and shipping more features, we hit a massive engineering wall. Our teams were duplicating work, and our shipping speeds crawled to a halt because of shitty design handoffs and deprecated frameworks." },
+            { "type": "paragraph", "text": "Most people doubted we could build a single, unified design system that worked across all our products without removing what made each app unique. To do it right, we rebuilt our entire frontend using Nuxt 3, pairing it with our new design system which I named Nectar." },
+            { "type": "paragraph", "text": "By running our documentation through VitePress, we connected Figma directly to our live code docs and production repos. The result was a flawless, automated chain where design choices instantly update both the documentation and the live apps without anyone having to manually copy over styles." },
+            { "type": "image", "src": "/img/preview_case1.png", "alt": "Nectar design system preview" }
+          ]
+        },
+        {
+          "heading": "The Friction (What was breaking)",
+          "level": 2,
+          "content": [
+            { "type": "paragraph", "text": "Before Nectar and the Nuxt 3 migration, our development lifecycle was a constant battle against a disconnected stack:" },
+            {
+              "type": "list", "style": "bullets",
+              "items": [
+                { "label": "Reinventing the wheel", "text": "Separate teams were constantly rebuilding identical interface elements from scratch. This left us with highly decoupled codebases, inconsistent UI states, and a ton of duplicate styling." },
+                { "label": "We did screw up", "text": "Our first pass at a shared library missed the mark. We brought users into the feedback loop way too early—before we actually had our own build automation and priority processes figured out. Naturally, they didn't love it, so we went back to the drawing board to iron everything out." },
+                { "label": "Manual translation and bloated code", "text": "Every time we tweaked a corner radius, a spacing value, or a brand color inside Figma, the change had to be passed to engineering via static mockups or Slack. Engineers then hardcoded those values, creating miles of redundant custom CSS that bloated our production bundles." },
+                { "label": "The endless visual QA loop", "text": "Instead of focusing on accessibility, usability, or actual feature logic, we spent way too many development cycles stuck in review meetings pushing pixels back and forth." }
+              ]
+            },
+            { "type": "image", "src": "/img/preview_case3.png", "alt": "Nectar design system preview" }
+          ]
+        },
+        {
+          "heading": "The Architecture",
+          "level": 2,
+          "content": [
+            { "type": "paragraph", "text": "To clear out the clutter, we treated our UI infrastructure like a real software product. We automated the boring stuff with a continuous pipeline that turns design choices directly into production code utilities and live documentation without human intervention." },
+            {
+              "type": "list", "style": "numbered",
+              "items": [
+                { "label": "The Source (Figma)", "text": "Designers define and update baseline values (colors, typography, spacing) right inside Figma using Variables." },
+                { "label": "The Output (Code)", "text": "The pipeline generates reusable utility functions and component templates that can be used throughout the codebase." },
+                { "label": "The Result (Vitepress)", "text": "The pipeline generates live documentation that shows how to use the new utilities and components." }
+              ]
+            },
+            { "type": "paragraph", "text": "Because VitePress is built on top of Vue, our documentation site renders the exact same production Vue components our apps use. If a token changes in Figma, the documentation updates its live interactive examples and production apps receive the updated style at the exact same moment." }
+          ]
+        },
+        {
+          "heading": "The Strategy",
+          "level": 2,
+          "content": [
+            { "type": "paragraph", "text": "Engineering an adoptable system meant giving developers predictable component code, pairing it with documentation, and providing enough layout freedom so they wouldn't want to detach from the library." },
+            { "type": "image", "src": "/img/preview_case2.png", "alt": "Nectar design system preview" }
+          ]
+        },
+        {
+          "heading": "Living Documentation with VitePress",
+          "level": 3,
+          "content": [
+            { "type": "paragraph", "text": "We knew that if documentation is hard to maintain, it dies. By choosing VitePress, we kept all our documentation inside the codebase as clean Markdown files packed with live, interactive Vue 3 component examples." }
+          ]
+        },
+        {
+          "heading": "Sorting the Backlog with Data",
+          "level": 3,
+          "content": [
+            { "type": "paragraph", "text": "We didn't just pick components out of a hat. To build trust with engineering and maximize early adoption during our massive Nuxt 3 frontend rebuild, we sorted our backlog strategically:" },
+            {
+              "type": "list", "style": "numbered",
+              "items": [
+                { "label": "Consumer Need", "text": "I audited our legacy repositories, using component instance counts as a proxy for actual developer need. The components used most frequently in production were fast-tracked for tokenization in Nectar." },
+                { "label": "Atomic Sizing", "text": "We built strictly from the smallest pieces up. Because large components naturally rely on smaller building blocks, nailing elements like buttons and text inputs first ensured a highly stable, dependency-free development loop." }
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "The Payoff",
+          "level": 2,
+          "content": [
+            { "type": "paragraph", "text": "By shifting our UI foundation to automated pipelines, migrating our frontend to Nuxt 3, and launching live documentation via VitePress, Nectar completely changed how Privacy Bee ships software. We removed the need for static design specs, slashed time trapped in visual QA, and ensured production styles always mirror Figma variables in real time. Strict component guardrails and tokenized utilities eliminated messy override CSS and flexible slots plus clear documentation made Nectar a system developers actually want to use." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "integrate",
+      "type": "case-study",
+      "route": "/case/integrate",
+      "url": "https://pixelscript.io/case/integrate",
+      "company": "Integrate",
+      "relatedJobId": "integrate",
+      "title": "Case Study: Architecting a High-Density UI Ecosystem for Integrate",
+      "cardTitle": "Integrate",
+      "role": "Senior Product Designer & Lead Front-End Developer",
+      "cardRole": "Senior Product Designer",
+      "excerpt": "Refactoring a Material Design fork into a high-density UI ecosystem built for enterprise lead management and complex data workflows.",
+      "previewImage": null,
+      "metrics": [
+        { "value": "85%", "label": "Reduction in CSS overrides" },
+        { "value": "20+", "label": "Reusable UI components built" },
+        { "value": "4x", "label": "Faster dashboard load times" }
+      ],
+      "sections": [
+        {
+          "heading": "The Backstory: The \"Oh Crap\" Realization",
+          "level": 2,
+          "content": [
+            { "type": "paragraph", "text": "When I first dove into the product, Integrate was doing some incredibly heavy lifting behind the scenes. It was acting as the literal bodyguard for enterprise marketing databases, ingesting massive pipelines of lead data from events, social channels, and web forms, validating it, and shipping it clean to massive CRMs like Marketo and Salesforce." },
+            { "type": "paragraph", "text": "But out on the frontend surface, the interface was held together by a default, out-of-the-box fork of Google Material Design." },
+            { "type": "paragraph", "text": "Google Material is fantastic if you're building a consumer app or a clean mobile calendar. But when your power users are marketing ops managers who need to map complex API boundaries, set data governance filters, and stare at data-dense pacing dashboards all day? Material started to break under the weight of it all. It was too padded, too rigid, and lacked the specialized layout ergonomics needed for intense, tabular software. The devs were constantly writing custom, one-off CSS overrides just to fit huge data grids onto a single screen, leading to serious codebase bloat and massive design-to-code drift." }
+          ]
+        },
+        {
+          "heading": "The Puzzle: Mutating the Fork",
+          "level": 2,
+          "content": [
+            { "type": "paragraph", "text": "Instead of executing a total redesign which is a fun designer fantasy but a massive business liability, we treated it as a refactoring puzzle. Because my role split the difference between visual design and production code, I didn't just hand off static mockups; I lived inside our Angular repository, fixing application bugs and systematically rewriting components from the structural foundation up. This was actually when I fell in love with JavaScript." },
+            { "type": "paragraph", "text": "We took that original Material Design fork and completely re-engineered it into a custom, standalone design system designed specifically for enterprise data orchestration." },
+            { "type": "paragraph", "text": "Here's how we made it happen:" },
+            {
+              "type": "list", "style": "numbered",
+              "items": [
+                { "label": "Layout Ergonomics", "text": "B2B lead management is nothing but spreadsheets and data tables. I stripped out Material's aggressive white space and built a tight, high-density layout grid. We engineered inline validation states and custom data cells so that if a user uploaded a messy lead file with 10,000 rows, the system could flag formatting errors instantly without breaking their flow." },
+                { "label": "The Field Mapping Interface", "text": "One of our biggest UX hurdles was designing the flow where users map incoming data fields to their internal systems. This required a highly interactive, drag-and-drop mapping matrix that standard Material elements couldn't even dream of supporting. I ran user research studies, built rapid prototypes, and coded a completely new mapping component that made setting up complex API rules feel natural." },
+                { "label": "Working with Angular", "text": "To maximize dev velocity, I personally rewrote our core components inside our Angular repo. We turned our modified elements into strict, predictable, and highly reusable components. This meant that when a developer needed to stand up a new analytics dashboard or campaign view, they could stitch it together with our UI primitives like Legos." }
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "Tracking Reality",
+          "level": 2,
+          "content": [
+            { "type": "paragraph", "text": "Building a system is one thing but making sure it actually works in production is another. I implemented front-end tracking systems to analyze exactly how users behaved inside our validation workflows and dashboards. If the data showed users stuck or experiencing errors on a specific campaign setup screen, we went right back into the code to smooth out the components." }
+          ]
+        },
+        {
+          "heading": "What I Learned",
+          "level": 2,
+          "content": [
+            { "type": "paragraph", "text": "To build trust with engineering and maximize early adoption during our massive rebuild, we sorted our backlog strategically:" },
+            {
+              "type": "list", "style": "numbered",
+              "items": [
+                { "label": null, "text": "Enterprise users deserve beautiful tools, too. There's an old, lazy assumption in tech that B2B software is allowed to look like a clunky 1995 database just because people are paid to use it." },
+                { "label": null, "text": "If you design it, you should understand how it behaves in the repo. Splitting my time between design and development was a massive superpower. We completely eliminated traditional handoff friction because our components' visual specs perfectly mirrored their programmatic logic right out of the box." },
+                { "label": null, "text": "It is incredibly tempting to ship a quick, messy bug fix to get a feature out the door. But taking the time to step back, refactor the design system, and build it properly always pays you back tenfold in future development velocity." }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+
+  "projects": [
+    {
+      "id": "pulse",
+      "type": "project",
+      "title": "Pulse",
+      "category": "Product Design",
+      "caseTitle": "Case Study - Pulse",
+      "caseLead": "Web Application Design",
+      "description": "Pulse is a web application for managing and tracking projects and tasks.",
+      "seoDescription": "A web application for managing and tracking projects and tasks.",
+      "route": "/case/pulse",
+      "url": "https://pixelscript.io/case/pulse",
+      "previewImage": "/img/preview_u1.png",
+      "fullImage": null,
+      "gallery": [
+        { "image": "/img/preview_ui1.png", "fullImage": "/img/full_ui1.png" },
+        { "image": "/img/preview_ui2.png", "fullImage": "/img/full_ui2.png" },
+        { "image": "/img/preview_ui3.png", "fullImage": "/img/full_ui3.png" },
+        { "image": "/img/preview_ui4.png", "fullImage": "/img/full_ui4.png" }
+      ]
+    },
+    {
+      "id": "bento",
+      "type": "project",
+      "title": "Bento Cards",
+      "category": "Product Design",
+      "description": null,
+      "route": null,
+      "url": "https://pixelscript.io/work",
+      "previewImage": "/img/preview_cards2.png",
+      "fullImage": "/img/full_cards2.png",
+      "gallery": []
+    },
+    {
+      "id": "aibento",
+      "type": "project",
+      "title": "AI Bento Cards",
+      "category": "Graphic Design",
+      "description": null,
+      "route": null,
+      "url": "https://pixelscript.io/work",
+      "previewImage": "/img/preview_cards.png",
+      "fullImage": "/img/full_cards.png",
+      "gallery": []
+    },
+    {
+      "id": "buzz",
+      "type": "project",
+      "title": "Buzz",
+      "category": "Mobile User Interface Design",
+      "caseTitle": "Case Study - Buzz",
+      "caseLead": "Mobile User Interface Design",
+      "description": "Buzz is a mobile messaging application focused on encrypted communication between peers.",
+      "seoDescription": "A mobile messaging application focused on encrypted communication between peers.",
+      "route": "/case/buzz",
+      "url": "https://pixelscript.io/case/buzz",
+      "previewImage": "/img/preview_buzz.png",
+      "fullImage": null,
+      "gallery": [
+        { "image": "/img/buzz_1.png", "fullImage": "/img/buzz_1_full.png" },
+        { "image": "/img/buzz_2.png", "fullImage": "/img/buzz_2_full.png" },
+        { "image": "/img/buzz_3.png", "fullImage": "/img/buzz_3_full.png" },
+        { "image": "/img/buzz_4.png", "fullImage": "/img/buzz_4_full.png" }
+      ]
+    },
+    {
+      "id": "duel",
+      "type": "project",
+      "title": "Duel",
+      "category": "Website Design",
+      "caseTitle": "Case Study - Duel",
+      "caseLead": "Website Design",
+      "description": "Duel is a cryptocurrency gambling website focused on maintaining a zero house-edge policy on all games.",
+      "seoDescription": "A cryptocurrency gambling website focused on maintaining a zero house-edge policy on all games.",
+      "route": "/case/duel",
+      "url": "https://pixelscript.io/case/duel",
+      "previewImage": "/img/preview_duel.png",
+      "fullImage": null,
+      "gallery": [
+        { "image": "/img/duelthumb_1.png", "fullImage": "/img/duelimg_1.png" },
+        { "image": "/img/duelthumb_2.png", "fullImage": "/img/duelimg_2.png" },
+        { "image": "/img/duelthumb_3.png", "fullImage": "/img/duelimg_3.png" }
+      ]
+    },
+    {
+      "id": "swapchain",
+      "type": "project",
+      "title": "Swapchain",
+      "category": "User Interface Design",
+      "caseTitle": "Case Study - Swapchain",
+      "caseLead": "User Interface Design",
+      "description": "Swapchain is a cryptocurrency derivative trading platform where users can create futures contracts to go short or long.",
+      "seoDescription": "A cryptocurrency derivative trading platform where users can create futures contracts to go short or long.",
+      "route": "/case/swapchain",
+      "url": "https://pixelscript.io/case/swapchain",
+      "previewImage": "/img/preview_swapchain.png",
+      "fullImage": null,
+      "gallery": [
+        { "image": "/img/swapchain_1.png", "fullImage": "/img/swapchain_1_full.png" },
+        { "image": "/img/swapchain_2.png", "fullImage": "/img/swapchain_2_full.png" },
+        { "image": "/img/swapchain_3.png", "fullImage": "/img/swapchain_3_full.png" }
+      ]
+    },
+    {
+      "id": "liftlog",
+      "type": "project",
+      "title": "LiftLog",
+      "category": "Branding & Mobile User Interface Design",
+      "caseTitle": "Case Study - LiftLog",
+      "caseLead": "Branding & Mobile User Interface Design",
+      "description": "LiftLog is a mobile application where users can log and track all of their workout progress.",
+      "seoDescription": "A mobile application where users can log and track all of their workout progress.",
+      "route": "/case/liftlog",
+      "url": "https://pixelscript.io/case/liftlog",
+      "previewImage": "/img/preview_liftlog.png",
+      "fullImage": null,
+      "gallery": [
+        { "image": "/img/liftlog_3.png", "fullImage": "/img/liftlog_3_full.png" },
+        { "image": "/img/liftlog_1.png", "fullImage": "/img/liftlog_1_full.png" },
+        { "image": "/img/liftlog_2.png", "fullImage": "/img/liftlog_2_full.png" }
+      ]
+    },
+    {
+      "id": "privacybee-ui",
+      "type": "project",
+      "title": "Privacy Bee",
+      "category": "User Interface Design",
+      "caseTitle": "Case Study - Privacy Bee",
+      "caseLead": "User Interface Design",
+      "description": "Privacy Bee is a privacy-focused web application that helps users take control of their online privacy. The app scans the web for your exposed information on data broker websites and automatically removes them to keep your private information secure and out of the public eye.",
+      "seoDescription": "A privacy-focused web application that helps users take control of their online privacy.",
+      "route": "/case/privacybee",
+      "url": "https://pixelscript.io/case/privacybee",
+      "previewImage": null,
+      "fullImage": null,
+      "note": "UI design gallery for Privacy Bee. Not listed on the Work page; the featured Privacy Bee case study is 'nectar'.",
+      "gallery": [
+        { "image": "/img/privacybee_1.png", "fullImage": "/img/privacybee_1_full.png" },
+        { "image": "/img/privacybee_2.png", "fullImage": "/img/privacybee_2_full.png" },
+        { "image": "/img/privacybee_3.png", "fullImage": "/img/privacybee_3_full.png" }
+      ]
+    }
+  ],
+
+  "contact": {
+    "route": "/contact",
+    "heading": "Contact",
+    "lead": "Let's connect and create something amazing together. Email me directly at joe@pixelscript.io.",
+    "email": "joe@pixelscript.io",
+    "channels": [
+      { "id": "email", "label": "Email", "detail": "joe@pixelscript.io", "url": "mailto:joe@pixelscript.io", "icon": "M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48Zm-96,85.15L52.57,64H203.43ZM98.71,128,40,181.81V74.19Zm11.84,10.85,12,11.05a8,8,0,0,0,10.82,0l12-11.05,58,53.15H52.57ZM157.29,128,216,74.18V181.82Z" },
+      { "id": "linkedin", "label": "LinkedIn", "detail": "in/joeberthelot", "url": "https://www.linkedin.com/in/joeberthelot/", "icon": "M216,26H40A14,14,0,0,0,26,40V216a14,14,0,0,0,14,14H216a14,14,0,0,0,14-14V40A14,14,0,0,0,216,26Zm2,190a2,2,0,0,1-2,2H40a2,2,0,0,1-2-2V40a2,2,0,0,1,2-2H216a2,2,0,0,1,2,2ZM94,112v64a6,6,0,0,1-12,0V112a6,6,0,0,1,12,0Zm88,28v36a6,6,0,0,1-12,0V140a22,22,0,0,0-44,0v36a6,6,0,0,1-12,0V112a6,6,0,0,1,12,0v2.11A34,34,0,0,1,182,140ZM98,84A10,10,0,1,1,88,74,10,10,0,0,1,98,84Z" },
+      { "id": "github", "label": "GitHub", "detail": "pixelscript-io", "url": "https://github.com/pixelscript-io", "icon": "M206.13,75.92A57.79,57.79,0,0,0,201.2,29a6,6,0,0,0-5.2-3,57.77,57.77,0,0,0-47,24H123A57.77,57.77,0,0,0,76,26a6,6,0,0,0-5.2,3,57.79,57.79,0,0,0-4.93,46.92A55.88,55.88,0,0,0,58,104v8a54.06,54.06,0,0,0,50.45,53.87A37.85,37.85,0,0,0,98,192v10H72a26,26,0,0,1-26-26A38,38,0,0,0,8,138a6,6,0,0,0,0,12,26,26,0,0,1,26,26,38,38,0,0,0,38,38H98v18a6,6,0,0,0,12,0V192a26,26,0,0,1,52,0v40a6,6,0,0,0,12,0V192a37.85,37.85,0,0,0-10.45-26.13A54.06,54.06,0,0,0,214,112v-8A55.88,55.88,0,0,0,206.13,75.92ZM202,112a42,42,0,0,1-42,42H112a42,42,0,0,1-42-42v-8a43.86,43.86,0,0,1,7.3-23.69,6,6,0,0,0,.81-5.76,45.85,45.85,0,0,1,1.43-36.42,45.85,45.85,0,0,1,35.23,21.1A6,6,0,0,0,119.83,62h32.34a6,6,0,0,0,5.06-2.76,45.83,45.83,0,0,1,35.23-21.11,45.85,45.85,0,0,1,1.43,36.42,6,6,0,0,0,.79,5.74A43.78,43.78,0,0,1,202,104Z" },
+      { "id": "resume", "label": "Resume", "detail": "PDF", "url": "https://pixelscript.io/pdf/resume.pdf", "icon": "M210.43,41.22l-130.25-23A14,14,0,0,0,64,29.58l-29.75,169a14,14,0,0,0,11.36,16.22l130.25,23h0a13.64,13.64,0,0,0,2.46.22A14,14,0,0,0,192,226.42l29.75-169A14,14,0,0,0,210.43,41.22ZM210,55.36l-29.75,169a2,2,0,0,1-.82,1.3,2,2,0,0,1-1.49.33L47.65,203A2,2,0,0,1,46,200.64l29.75-169a2,2,0,0,1,.82-1.3A2.06,2.06,0,0,1,78.1,30L208.35,53A2,2,0,0,1,210,55.36ZM186.11,75.51a6,6,0,0,1-5.9,5,6.2,6.2,0,0,1-1.05-.09l-83-14.66a6,6,0,1,1,2.09-11.81l83,14.65A6,6,0,0,1,186.11,75.51ZM180.56,107a6,6,0,0,1-5.9,5,5.48,5.48,0,0,1-1-.1l-83-14.65a6,6,0,0,1,2.09-11.82l83,14.66A6,6,0,0,1,180.56,107Zm-47,24.19a6,6,0,0,1-5.91,4.95,6.38,6.38,0,0,1-1.05-.09l-41.49-7.33a6,6,0,1,1,2.09-11.81l41.49,7.32A6,6,0,0,1,133.53,131.22Z" }
+    ],
+    "form": {
+      "fields": [
+        { "id": "first-name", "label": "First name", "placeholder": "First name", "type": "text", "required": true },
+        { "id": "last-name", "label": "Last name", "placeholder": "Last name", "type": "text", "required": true },
+        { "id": "email", "label": "Email address", "placeholder": "you@company.com", "type": "email", "required": true },
+        { "id": "message", "label": "Message", "placeholder": "Your message", "type": "textarea", "required": true }
+      ],
+      "submitLabel": "Send message",
+      "submittingLabel": "Sending...",
+      "successMessage": "Your message has been received and I'll get back with you as soon as possible. Thanks!",
+      "validationMessage": "Please fill out all required fields.",
+      "errorMessage": "Failed to send the message."
+    }
+  },
+
+  "footer": {
+    "copyright": "Designed & developed by myself...a human being.",
+    "logo": "/img/logo_full.svg"
+  },
+
+  "navigation": [
+    { "label": "Home", "hotkey": "A", "route": "/old" },
+    { "label": "Experience", "hotkey": "S", "route": "/experience" },
+    { "label": "Work", "hotkey": "D", "route": "/work" },
+    { "label": "Contact", "hotkey": "F", "route": "/contact" }
+  ]
+}

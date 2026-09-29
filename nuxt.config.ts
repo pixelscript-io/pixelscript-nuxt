@@ -51,6 +51,9 @@ export default defineNuxtConfig({
     Sitemap: 'https://pixelscript.io/sitemap.xml'
   },
   compatibilityDate: '2024-04-03',
+  runtimeConfig: {
+    anthropicApiKey: '',
+  },
   css: [
     '~/assets/css/tokens.css',
     '~/assets/css/main.css',

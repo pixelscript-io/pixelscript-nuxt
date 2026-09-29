@@ -18,7 +18,7 @@
 					</div>
 				</div>
 				<div class="right">
-					<NavButton label="Home" hotkey="A" route="/" :footer="true" @click="goTo('/')" />
+					<NavButton label="Home" hotkey="A" :route="homeRoute" :footer="true" @click="goTo(homeRoute)" />
 					<NavButton label="Experience" hotkey="S" route="/experience" :footer="true" @click="goTo('/experience')" />
 					<NavButton label="Work" hotkey="D" route="/work" :footer="true" @click="goTo('/work')" />
 					<NavButton label="Contact" hotkey="F" route="/contact" :footer="true" @click="goTo('/contact')" />
@@ -29,6 +29,12 @@
 </template>
 
 <script setup lang="ts">
+	withDefaults(defineProps<{
+		homeRoute?: string
+	}>(), {
+		homeRoute: '/',
+	})
+
 	const router = useRouter()
 
 	const goTo = (route: string) => {

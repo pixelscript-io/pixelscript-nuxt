@@ -3,7 +3,7 @@
 		<div id="header-wrapper">
 			<AppSquares />
 
-			<a href="/" class="logo-link" aria-label="PixelScript Home">
+			<a :href="homeRoute" class="logo-link" aria-label="PixelScript Home">
 				<svg class="logo-icon" width="33" height="24" viewBox="0 0 33 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
 					<path fill-rule="evenodd" clip-rule="evenodd" d="M8.00758 20.0002L4.00415 16.0001L8.00758 12.0004L12.011 16.0001L8.00758 20.0002Z" style="fill: var(--ps-color-ramp-blue-7)"/>
 					<path fill-rule="evenodd" clip-rule="evenodd" d="M12.0112 24L8.00781 20.0004L12.0112 16.0002L16.0147 20.0004L12.0112 24Z" style="fill: var(--ps-color-ramp-blue-10)"/>
@@ -18,20 +18,57 @@
 				</svg>
 			</a>
 
-			<nav aria-label="Main navigation">
-				<div id="nav-links">
-					<NavButton label="Home" hotkey="A" route="/" @click="goTo('/')" />
-					<NavButton label="Experience" hotkey="S" route="/experience" @click="goTo('/experience')" />
-					<NavButton label="Work" hotkey="D" route="/work" @click="goTo('/work')" />
-					<NavButton label="Contact" hotkey="F" route="/contact" @click="goTo('/contact')" />
-				</div>
-			</nav>
+			<div id="header-right">
+				<nav v-if="!hideNav" aria-label="Main navigation">
+					<div id="nav-links">
+						<NavButton label="Home" hotkey="A" :route="homeRoute" @click="goTo(homeRoute)" />
+						<NavButton label="Experience" hotkey="S" route="/experience" @click="goTo('/experience')" />
+						<NavButton label="Work" hotkey="D" route="/work" @click="goTo('/work')" />
+						<NavButton label="Contact" hotkey="F" route="/contact" @click="goTo('/contact')" />
+					</div>
+				</nav>
+
+				<button v-if="showStartOver && phase !== 'idle'" type="button" class="start-over group" @click="startOver">
+					<span>Start over</span>
+					<kbd>ESC</kbd>
+				</button>
+			</div>
 		</div>
 	</header>
 </template>
 
 <script setup lang="ts">
+const props = withDefaults(defineProps<{
+	hideNav?: boolean
+	showStartOver?: boolean
+	homeRoute?: string
+}>(), {
+	hideNav: false,
+	showStartOver: false,
+	homeRoute: '/',
+})
+
 const router = useRouter()
+const route = useRoute()
+
+// Shared with the AI landing page, so resetting here clears the conversation there.
+const { phase, reset } = useIntentState()
+
+const startOver = () => {
+	reset()
+	if (route.path !== '/') router.push('/')
+}
+
+// Escape starts over, on the landing page and on AI case study pages alike.
+const onKeydown = (event: KeyboardEvent) => {
+	if (!props.showStartOver || event.key !== 'Escape' || phase.value === 'idle') return
+	const target = event.target as HTMLElement | null
+	if (target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA')) return
+	startOver()
+}
+
+onMounted(() => window.addEventListener('keydown', onKeydown))
+onBeforeUnmount(() => window.removeEventListener('keydown', onKeydown))
 
 const goTo = (route: string) => {
 	router.push(route)
@@ -55,6 +92,30 @@ header {
 	@apply focus:outline-none focus:ring-2 focus:ring-ps-blue-100 focus:ring-offset-2 focus:ring-offset-zinc-950;
 	@apply rounded-sm;
 }
+
+.start-over {
+	@apply h-8 px-2 rounded-sm bg-transparent flex items-center gap-2;
+	@apply text-sm text-zinc-500 transition-colors duration-150 hover:text-zinc-400;
+}
+
+.start-over:focus-visible {
+	@apply outline-none ring-2 ring-ps-blue-100;
+}
+
+.start-over kbd {
+	@apply hidden lg:flex h-5 items-center rounded-sm border border-zinc-800 px-1;
+	@apply text-[11px] font-medium text-zinc-500 transition-colors duration-150;
+	font-family: var(--ps-font-mono);
+}
+
+.start-over:hover kbd {
+	@apply border-zinc-400 text-zinc-400;
+}
+
+#header-right {
+	@apply flex items-center lg:space-x-4;
+}
+
 
 #nav-links {
 	@apply flex items-center;

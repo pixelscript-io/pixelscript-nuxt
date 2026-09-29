@@ -22,8 +22,8 @@ defineProps<{
 	title: string
 	role: string
 	excerpt: string
-	metricValue: string
-	metricLabel: string
+	metricValue?: string
+	metricLabel?: string
 	route: string
 }>()
 </script>

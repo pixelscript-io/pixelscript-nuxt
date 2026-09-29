@@ -26,7 +26,7 @@
 						class="hero-heading"
 						v-bind="fadeProps(fadeTimings.heading)"
 					>
-						Hi, I'm Joe<HeroTypewriter :delay-ms="typewriterDelayMs" />
+						Hi, I'm Joe<ClientOnly><HeroTypewriter :delay-ms="typewriterDelayMs" /></ClientOnly>
 					</motion.p>
 
 					<motion.p
@@ -55,84 +55,13 @@
 
 <script setup lang="ts">
 import { motion } from 'motion-v'
-import { onMounted, ref } from 'vue'
+import { ref } from 'vue'
 import CircuitSpotlight from './CircuitSpotlight.vue'
 import GridPulseCanvas from './GridPulseCanvas.client.vue'
 
-const heroWrapper = ref<HTMLElement | null>(null)
 const spotlightRef = ref<InstanceType<typeof CircuitSpotlight> | null>(null)
-const prefersReducedMotion = ref<boolean>(false)
-const isReady = ref<boolean>(false)
-const animationKey = ref<number>(0)
 
-const fadeEase = [0.22, 1, 0.36, 1] as const
-
-const fadeTimings = {
-	heading: 0.25,
-	subheading: 0.75,
-	divider: 1.4,
-	text: 2.05,
-	duration: 0.55,
-	dividerDuration: 0.45,
-} as const
-
-const typewriterDelayMs = (fadeTimings.text + fadeTimings.duration) * 1000 + 100
-
-const fadeProps = (delay: number) => {
-	if (!isReady.value) {
-		return {
-			initial: { opacity: 0, y: 10 },
-			animate: { opacity: 0, y: 10 },
-		}
-	}
-
-	if (!animationKey.value || prefersReducedMotion.value) {
-		return {
-			initial: false,
-			animate: { opacity: 1, y: 0 },
-		}
-	}
-
-	return {
-		initial: { opacity: 0, y: 10 },
-		animate: { opacity: 1, y: 0 },
-		transition: { duration: fadeTimings.duration, delay, ease: fadeEase },
-	}
-}
-
-const dividerProps = (delay: number) => {
-	if (!isReady.value) {
-		return {
-			initial: { opacity: 0, scaleX: 0 },
-			animate: { opacity: 0, scaleX: 0 },
-			style: { transformOrigin: 'left center' },
-		}
-	}
-
-	if (!animationKey.value || prefersReducedMotion.value) {
-		return {
-			initial: false,
-			animate: { opacity: 1, scaleX: 1 },
-		}
-	}
-
-	return {
-		initial: { opacity: 0, scaleX: 0 },
-		animate: { opacity: 1, scaleX: 1 },
-		transition: { duration: fadeTimings.dividerDuration, delay, ease: fadeEase },
-		style: { transformOrigin: 'left center' },
-	}
-}
-
-onMounted(() => {
-	prefersReducedMotion.value = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-
-	if (!prefersReducedMotion.value) {
-		animationKey.value = 1
-	}
-
-	isReady.value = true
-})
+const { isReady, animationKey, typewriterDelayMs, fadeTimings, fadeProps, dividerProps } = useHeroMotion()
 
 const updateSpotlight = (event: MouseEvent) => {
 	spotlightRef.value?.updateSpotlight(event)
