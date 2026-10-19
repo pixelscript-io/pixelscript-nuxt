@@ -61,6 +61,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2026-04-03',
   runtimeConfig: {
     anthropicApiKey: '',
+    resendApiKey: '',
   },
   css: [
     '~/assets/css/tokens.css',
