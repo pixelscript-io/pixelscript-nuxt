@@ -56,8 +56,6 @@
 </template>
 
 <script setup lang="ts">
-const mail = useMail()
-
 const formData = reactive({
 	firstName: '',
 	lastName: '',
@@ -68,7 +66,7 @@ const formData = reactive({
 const sent = ref(false)
 const loading = ref(false)
 
-const handleSubmit = () => {
+const handleSubmit = async () => {
 	const { firstName, lastName, email, message } = formData
 
 	if (!firstName || !lastName || !email || !message) {
@@ -76,32 +74,20 @@ const handleSubmit = () => {
 		return
 	}
 
-	const emailContent = `
-    First Name: ${firstName}
-    Last Name: ${lastName}
-    Email: ${email}
-    Message: ${message}
-  `
-
 	loading.value = true
 
-	mail
-		.send({
-			to: 'joe@pixelscript.io',
-			from: `${firstName} ${lastName} <${email}>`,
-			subject: 'Website Inquiry',
-			text: emailContent,
+	try {
+		await $fetch('/api/contact', {
+			method: 'POST',
+			body: { firstName, lastName, email, message },
 		})
-		.then(() => {
-			sent.value = true
-		})
-		.catch((err: unknown) => {
-			console.error(err)
-			alert('Failed to send the message.')
-		})
-		.finally(() => {
-			loading.value = false
-		})
+		sent.value = true
+	} catch (err: unknown) {
+		console.error(err)
+		alert('Failed to send the message.')
+	} finally {
+		loading.value = false
+	}
 }
 </script>
 

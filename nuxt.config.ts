@@ -33,6 +33,14 @@ export default defineNuxtConfig({
     viewTransition: true
   },
   nitro: {
+    preset: 'cloudflare_module', // Workers (recommended); use 'cloudflare_pages' if deploying to Pages
+      cloudflare: {
+        deployConfig: true,  // generates the wrangler config for you
+        nodeCompat: true,     // enables nodejs_compat
+        wrangler: {
+          name: 'pixelscript-io-pixelscript-2'
+        }
+      },
     compressPublicAssets: true,
     minify: true
   },
@@ -50,7 +58,7 @@ export default defineNuxtConfig({
     Disallow: '',
     Sitemap: 'https://pixelscript.io/sitemap.xml'
   },
-  compatibilityDate: '2024-04-03',
+  compatibilityDate: '2026-04-03',
   runtimeConfig: {
     anthropicApiKey: '',
   },
@@ -67,21 +75,21 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     'motion-v/nuxt',
-    'nuxt-mail',
+    // 'nuxt-mail',
     'nuxt-gtag'
   ],
   gtag: {
     id: 'G-TK2LQS8XGY'
   },
-  mail: {
-    message: {
-      to: 'joe@pixelscript.io',
-    },
-    smtp: {
-      host: "moose.mxrouting.net",
-      port: 465,
-    },
-  },
+  // mail: {
+  //   message: {
+  //     to: 'joe@pixelscript.io',
+  //   },
+  //   smtp: {
+  //     host: "moose.mxrouting.net",
+  //     port: 465,
+  //   },
+  // },
   tailwindcss: {
     config: {
       theme: {
