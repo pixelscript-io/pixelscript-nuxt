@@ -1,18 +1,12 @@
 <template>
   <div id="app">
 		<div id="background"></div>
-		<VersionNotice
-			label="Site version"
-			message="You're viewing the non-AI version of this site."
-			link-text="Try the AI version"
-			to="/"
-		/>
-		<AppHeader home-route="/old" />
+		<AppHeader home-route="/" />
 		<div id="content">
 			<slot />
 		</div>
 		<AppTestimonial />
-		<AppFooter home-route="/old" />
+		<AppFooter home-route="/" />
   </div>
 </template>
 

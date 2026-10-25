@@ -524,7 +524,7 @@
   },
 
   "navigation": [
-    { "label": "Home", "hotkey": "A", "route": "/old" },
+    { "label": "Home", "hotkey": "A", "route": "/" },
     { "label": "Experience", "hotkey": "S", "route": "/experience" },
     { "label": "Work", "hotkey": "D", "route": "/work" },
     { "label": "Contact", "hotkey": "F", "route": "/contact" }

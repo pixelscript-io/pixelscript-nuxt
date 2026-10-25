@@ -5,7 +5,7 @@
 					label="AI disclaimer"
 					message="AI responses may contain slight mistakes."
 					link-text="View the non-AI version"
-					to="/old"
+					to="/"
 				/>
 		<AppHeader hide-nav show-start-over home-route="/" />
 		<div id="content">

@@ -11,9 +11,10 @@ import { onBeforeUnmount, onMounted, ref } from 'vue'
 type PulseAxis = 'h' | 'v'
 type Pulse = { axis: PulseAxis; idx: number; phase: number; speed: number }
 
-const props = withDefaults(defineProps<{ gridSize?: number; intensity?: number }>(), {
+const props = withDefaults(defineProps<{ gridSize?: number; intensity?: number; drawGrid?: boolean }>(), {
 	gridSize: 32,
 	intensity: 0.35,
+	drawGrid: false,
 })
 
 const canvasRef = ref<HTMLCanvasElement | null>(null)
@@ -89,6 +90,23 @@ onMounted(() => {
 		}
 
 		ctx.clearRect(0, 0, width, height)
+
+		if (props.drawGrid) {
+			ctx.shadowBlur = 0
+			ctx.strokeStyle = `rgba(${glowRgb}, 0.03)`
+			ctx.lineWidth = 1
+			ctx.beginPath()
+			for (let x = 0; x <= width; x += GRID) {
+				ctx.moveTo(x + 0.5, 0)
+				ctx.lineTo(x + 0.5, height)
+			}
+			for (let y = 0; y <= height; y += GRID) {
+				ctx.moveTo(0, y + 0.5)
+				ctx.lineTo(width, y + 0.5)
+			}
+			ctx.stroke()
+		}
+
 		t += 0.012
 		ctx.shadowBlur = 6 * intensity
 		ctx.shadowColor = `rgba(${glowRgb}, ${0.35 * intensity})`

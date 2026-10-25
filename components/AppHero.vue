@@ -8,7 +8,7 @@
 		>
 			<CircuitSpotlight ref="spotlightRef" />
 
-			<GridPulseCanvas :intensity="0.3" />
+			<GridPulseCanvas :intensity="0.3" draw-grid />
 
 			<AppSquares />
 

@@ -71,8 +71,6 @@ const spotlightStyle = computed(() => ({
 .circuit-base,
 .circuit-highlight {
 	@apply absolute inset-0;
-	position: fixed;
-	inset: 0;
 	pointer-events: none;
 	z-index: 0;
 	background-image:

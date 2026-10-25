@@ -8,6 +8,14 @@
 				<p class="lead">Crafting impactful designs and experiences that bring ideas to life.</p>
 				<hr class="page-divider-short" />
 
+				<FeaturedProject
+					title="Tessera"
+					role="Creator & Lead Engineer"
+					excerpt="A design-system-first frontend framework where tokens, accessibility and variants are enforced at compile time, and AI tools check with the compiler before they write code."
+					image="/img/preview_tessera.png"
+					route="/case/tessera"
+				/>
+
 				<div class="case-study-grid">
 					<CaseStudyPreview
 						title="Privacy Bee"
